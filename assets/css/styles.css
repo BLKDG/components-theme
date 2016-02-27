@@ -1,11 +1,30 @@
+/******
+* 
+* Add Sequence-dependent files
+*  
+******/
+/***
+* Mixins
+***/
+/***
+* USAGE: @include transition(background-color 1s .5s, color 2s);
+***/
+/***
+* Partials
+***/
 /***
  * 
  * Variables User throughout our build
- *  
+ * Colors, Font Families, Etc. 
  ***/
 /***
  * 
  * Button Styles
+ *  
+ ***/
+/***
+ * 
+ * Navigation Styles
  *  
  ***/
 
