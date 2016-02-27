@@ -52,6 +52,7 @@ var PATHS = {
   ]
 };
 
+
 // Browsersync task
 gulp.task('browser-sync', ['build'], function() {
 
