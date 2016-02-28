@@ -1,5 +1,10 @@
 # Development Notes
 
+## File Structure
+
+There is some WP functionality we lose by altering the template structure. For instance:
+header.php, footer.php, page.php, single.php only work as intended if they're in the top-level directory. Do we care? 
+
 ## Bower Components
 
 These haven't been introduced into the project just yet
