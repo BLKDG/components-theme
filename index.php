@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<!doctype html>
+<html class="no-js" <?php language_attributes(); ?> >
+	<body>
 
+		
 
-<?php get_footer(); ?>
+	<?php wp_footer(); ?>
+	</body>
+</html>
