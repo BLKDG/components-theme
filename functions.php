@@ -13,9 +13,9 @@ public static function componentRoute($componentName){
 	// TODO: Create function that calls the component with only the component name.
 	// TODO: Pass array of items that can be used in the component?
 
-	$filePath = 'components/'.$componentName.'/'.$componentName.'.php';
+	$componentRoute = 'components/'.$componentName.'/'.$componentName.'.php';
 
-	return $filePath;
+	return $componentRoute;
 
 }
 
