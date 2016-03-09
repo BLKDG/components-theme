@@ -1,11 +1,10 @@
 <?php
 
 /**
-* Return the route to the component
-*
-* @param $componentName
-* @return string
-*/
+ * Return the Route of the component
+ * @param  string $componentName 
+ * @return string
+ */
 function componentRoute($componentName){
 
 	// The problem: get_template_part() only supports one directory level into the theme.
