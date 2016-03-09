@@ -6,13 +6,13 @@
 * @param $componentName
 * @return string
 */
-public static function componentRoute($componentName){
+function componentRoute($componentName){
 
 	// The problem: get_template_part() only supports one directory level into the theme.
 
 	// TODO: Pass array of items that can be used in the component?
 
-	$componentRoute = 'components/'.$componentName.'/'.$componentName.'.php';
+	$componentRoute = 'components/'.$componentName.'/'.$componentName;
 
 	return $componentRoute;
 
