@@ -1,20 +1,16 @@
 <?php
-
 /**
- * Return the Route of the component
- * @param  string $componentName 
- * @return string
+ * 
+ * Set up the theme and provides some helper functions, which are used in the
+ * theme as custom template tags. Others are attached to action and filter
+ * hooks in WordPress to change core functionality.
+ * 
  */
-function componentRoute($componentName){
 
-	// The problem: get_template_part() only supports one directory level into the theme.
+// Add theme support
+include_once('includes/theme-support.php');
 
-	// TODO: Pass array of items that can be used in the component?
-
-	$componentRoute = 'components/'.$componentName.'/'.$componentName;
-
-	return $componentRoute;
-
-}
+// File routing helpers
+include_once('includes/routing.php');
 
 ?>
