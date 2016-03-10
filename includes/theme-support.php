@@ -51,5 +51,6 @@ if ( ! function_exists( 'components_theme_support' ) ) :
 			'chat',
 		) );
 	}
+	add_action( 'after_setup_theme', 'components_theme_support' );
 endif; // components_theme_support
-add_action( 'after_setup_theme', 'components_theme_support' );	
+	

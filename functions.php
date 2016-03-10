@@ -7,10 +7,16 @@
  * 
  */
 
+// Cleanup Wordpress defaults
+include_once('includes/cleanup.php');
+
 // Add theme support
 include_once('includes/theme-support.php');
 
 // File routing helpers
 include_once('includes/routing.php');
+
+// Enqueue Scripts
+include_once('includes/enqueue-scripts.php');
 
 ?>
