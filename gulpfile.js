@@ -77,7 +77,7 @@ gulp.task('sass', function() {
   // Minify CSS if run wtih --production flag
   var minifycss = $.if(isProduction, $.minifyCss());
 
-  return gulp.src(['assets/scss/manual.scss', 'components/**/*.scss'])
+  return gulp.src(['assets/scss/styles.scss', 'components/**/*.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.concat('styles.css'))
     .pipe($.sass({

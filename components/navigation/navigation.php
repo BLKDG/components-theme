@@ -1,39 +1,22 @@
-<header>
-	<div class="branding">
+<?php if ( has_nav_menu( 'primary' )) : ?>
 
-		<h1 class="title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<div class="navigation">
 
-		<?php 
-		$description = get_bloginfo( 'description', 'display' );
-		if ( $description ) : 
-		?>
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
-			<p class="description"><?php echo $description; ?></p>
+			<nav role="navigation">
+
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_class'     => 'primary-menu',
+					 ) );
+				?>
+
+			</nav>
 
 		<?php endif; ?>
 
 	</div>
-
-	<?php if ( has_nav_menu( 'primary' )) : ?>
-
-		<div class="menu">
-
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-
-				<nav role="navigation">
-
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu',
-						 ) );
-					?>
-
-				</nav>
-
-			<?php endif; ?>
-
-		</div>
-			
-	<?php endif; ?>
-</header>
+		
+<?php endif; ?>
