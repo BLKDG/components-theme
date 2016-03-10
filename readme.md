@@ -16,3 +16,5 @@ Component Styles are pulled from their component directory manually after the st
 ## TODO:
 
 Can we clean out the top level theme directory? from single.php, search.php?
+
+Be sure to reference foundationpress & twentysixteen as references
