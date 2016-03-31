@@ -12,27 +12,7 @@ if ( ! function_exists( 'components_theme_support' ) ) :
 		/**
 		 * Theme Check Wants it :()
 		 */
-		add_theme_support( 'automatic-feed-links' )
-
-		/**
-		 * Editor Style Support
-		 */
-		function add_editor_style( $stylesheet = 'editor-style.css' ) {
-		    add_theme_support( 'editor-style' );
-		 
-		    if ( ! is_admin() )
-		        return;
-		 
-		    global $editor_styles;
-		    $editor_styles = (array) $editor_styles;
-		    $stylesheet    = (array) $stylesheet;
-		    if ( is_rtl() ) {
-		        $rtl_stylesheet = str_replace('.css', '-rtl.css', $stylesheet[0]);
-		        $stylesheet[] = $rtl_stylesheet;
-		    }
-		 
-		    $editor_styles = array_merge( $editor_styles, $stylesheet );
-		}
+		add_theme_support( 'automatic-feed-links' );
 
 		/**
 		 * Set the content width variable
