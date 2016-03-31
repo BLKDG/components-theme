@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html <?php language_attributes(); ?>>
 	
 	<?php get_template_part(componentRoute('head')); ?>
 	

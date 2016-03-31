@@ -3,10 +3,24 @@ Theme Name: Components Theme
 Theme URI: TBD
 Author: BLKDG
 Author URI: https://blkdg.com/
-Description: Loosley based on the Twentysixteen theme, utilizing a component-based structure.
-Version: 0.1
+Description: Loosley based on the components-theme theme, utilizing a component-based structure.
+Tags: responsive-layout, fluid-layout, black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light
+Version: 0.3
 License: GNU General Public License v2 or later
 License URI: TBD
-Text Domain: TBD
-
+Text Domain: components-theme
 */
+
+/**
+ * Required Wordpress Styles
+ */
+
+.sticky{}
+.bypostauthor{}
+.alignleft{}
+.alignright{}
+.aligncenter{}
+.wp-caption{}
+.wp-caption-text{}
+.gallery-caption{}
+.screen-reader-text{}

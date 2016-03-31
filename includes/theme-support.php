@@ -9,6 +9,38 @@ if ( ! function_exists( 'components_theme_support' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+		/**
+		 * Theme Check Wants it :()
+		 */
+		add_theme_support( 'automatic-feed-links' )
+
+		/**
+		 * Editor Style Support
+		 */
+		function add_editor_style( $stylesheet = 'editor-style.css' ) {
+		    add_theme_support( 'editor-style' );
+		 
+		    if ( ! is_admin() )
+		        return;
+		 
+		    global $editor_styles;
+		    $editor_styles = (array) $editor_styles;
+		    $stylesheet    = (array) $stylesheet;
+		    if ( is_rtl() ) {
+		        $rtl_stylesheet = str_replace('.css', '-rtl.css', $stylesheet[0]);
+		        $stylesheet[] = $rtl_stylesheet;
+		    }
+		 
+		    $editor_styles = array_merge( $editor_styles, $stylesheet );
+		}
+
+		/**
+		 * Set the content width variable
+		 */
+		if ( ! isset( $content_width ) ) {
+			$content_width = 1200;
+		}
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
@@ -19,7 +51,7 @@ if ( ! function_exists( 'components_theme_support' ) ) :
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'twentysixteen' )
+			'primary' => __( 'Primary Menu', 'components-theme' )
 		) );
 
 		/*

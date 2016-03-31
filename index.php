@@ -20,12 +20,16 @@ get_header(); ?>
 
 		endwhile;
 
+		// Link Pages
+		wp_link_pages();
+		
 		// Previous/next page navigation.
 		the_posts_pagination( array(
-			'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-			'next_text'          => __( 'Next page', 'twentysixteen' ),
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+			'prev_text'          => __( 'Previous page', 'components-theme' ),
+			'next_text'          => __( 'Next page', 'components-theme' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'components-theme' ) . ' </span>',
 		) );
+
 
 	// If no content, include the "No posts found" template.
 	else :
