@@ -6,8 +6,6 @@
   ],
   "ignore": [],
   "dependencies": {
-    "foundation-sites": "~6.1.0",
-    "motion-ui" : "~1.1.0",
-    "fontawesome": "~4.4.0"
+    "bootstrap": "^3.3.6"
   }
 }

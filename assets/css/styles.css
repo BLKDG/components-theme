@@ -3,12 +3,35 @@
 * Add Sequence-dependent files
 *  
 ******/
+@import url(../vendor/bootstrap.css);
+/**
+ * Functions
+ */
+/**
+ * Calculate Rems from px
+ */
 /***
 * Mixins
 ***/
 /***
+* USAGE: @include transition(background-color 1s .5s, color 2s);
+***/
+/**
+ * Global Variables
+ */
+/***
+ * 
+ * Variables User throughout our build
+ * Colors, Font Families, Etc. 
+ ***/
+/***
 * Partials
 ***/
+/***
+ * 
+ * Button Styles
+ *  
+ ***/
 /***
  * 
  * Navigation Styles
