@@ -5,4 +5,4 @@
 	
 	<body <?php body_class(); ?>>
 
-		<?php get_template_part(componentRoute('header')); ?>
+		<?php get_template_part(componentRoute('header'), 'global'); ?>

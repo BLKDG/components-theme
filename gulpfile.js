@@ -7,7 +7,6 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var merge       = require('merge-stream');
 var sequence    = require('run-sequence');
-var colors      = require('colors');
 var dateFormat  = require('dateformat');
 var del         = require('del');
 
@@ -24,18 +23,13 @@ var COMPATIBILITY = ['last 2 versions', 'ie >= 9'];
 // File paths to various assets are defined here.
 var PATHS = {
   sass: [
-    'assets/scss/**/*.js',
-    'components/**/*.js'
+    'assets/scss/**/*.scss',
+    'components/**/*.scss'
   ],
   javascript: [
 
     'components/**/*.js'
 
-  ],
-  phpcs: [
-    '**/*.php',
-    '!wpcs',
-    '!wpcs/**',
   ],
   pkg: [
     '**/*',
@@ -45,8 +39,6 @@ var PATHS = {
     '!**/bower.json',
     '!**/gulpfile.js',
     '!**/package.json',
-    // '!**/composer.json',
-    // '!**/composer.lock',
     '!**/codesniffer.ruleset.xml',
     '!**/packaged/*',
   ]
@@ -150,29 +142,6 @@ gulp.task('package', ['build'], function() {
 gulp.task('build', ['clean'], function(done) {
   sequence(['sass', 'javascript', 'lint'],
           done);
-});
-
-// PHP Code Sniffer task
-gulp.task('phpcs', function() {
-  return gulp.src(PATHS.phpcs)
-    .pipe($.phpcs({
-      bin: 'wpcs/vendor/bin/phpcs',
-      standard: './codesniffer.ruleset.xml',
-      showSniffCode: true,
-    }))
-    .pipe($.phpcs.reporter('log'));
-});
-
-// PHP Code Beautifier task
-gulp.task('phpcbf', function () {
-  return gulp.src(PATHS.phpcs)
-  .pipe($.phpcbf({
-    bin: 'wpcs/vendor/bin/phpcbf',
-    standard: './codesniffer.ruleset.xml',
-    warningSeverity: 0
-  }))
-  .on('error', $.util.log)
-  .pipe(gulp.dest('.'));
 });
 
 // Clean task

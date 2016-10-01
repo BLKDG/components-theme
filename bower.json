@@ -6,6 +6,9 @@
   ],
   "ignore": [],
   "dependencies": {
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "fancybox": "^2.1.5",
+    "js-cookie": "^2.1.2",
+    "slick-carousel": "^1.6.0"
   }
 }

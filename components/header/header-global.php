@@ -15,6 +15,6 @@
 
 	</div>
 
-	<?php get_template_part( componentRoute('post-content'), get_post_format() ); ?>
+	<?php get_template_part( componentRoute('header'), 'navigation' ); ?>
 
 </header>

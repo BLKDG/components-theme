@@ -9,7 +9,7 @@ function componentRoute($componentName){
 	$enqueue_path = get_template_directory_uri() . "/components/$componentName/$componentName.js";
 	
 	if ( file_exists( $file_check ) ) {
-        wp_enqueue_script( $componentName . 'script', $enqueue_path, array(), false, true );
+        wp_enqueue_script( $componentName . '-script', $enqueue_path, array(), false, true );
     }	
     
 	$componentRoute = 'components/'.$componentName.'/'.$componentName;
