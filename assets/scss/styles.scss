@@ -4,7 +4,21 @@
 *  
 ******/
 
-@import '../vendor/bootstrap.css';
+$icon-font-path: "../vendor/bootstrap-sass/assets/fonts/bootstrap/";
+
+@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap';
+
+/**
+ * Slick Slider
+ */
+@import '../vendor/slick-carousel/slick/slick.scss';
+
+
+/**
+ * Global Variables
+ */
+@import 'helpers/variables';
+
 
 /**
  * Functions
@@ -15,11 +29,6 @@
 * Mixins
 ***/
 @import 'helpers/mixins';
-
-/**
- * Global Variables
- */
-@import 'helpers/variables';
 
 /***
 * Partials

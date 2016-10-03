@@ -1,5 +1,0 @@
-/***
- * 
- * Navigation Scripts YAY
- *  
- ***/
