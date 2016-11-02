@@ -1,0 +1,13 @@
+footer{
+	border-top:1px solid $gray-lighter;
+
+	ul{
+		list-style:none;
+		text-align:center;
+		margin-bottom:30px;
+		li{
+			display:inline;
+			padding:0 10px;
+		}
+	}
+}

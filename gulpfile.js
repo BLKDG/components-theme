@@ -205,8 +205,13 @@ gulp.task('default', ['build', 'browser-sync'], function() {
     console.log('[' + 'WATCH'.green + '] ' + fileName.magenta + ' was ' + event.type + ', running tasks...');
   }
 
+  gulp.watch(['components/**/*.scss'], ['sass'])
+    .on('change', function(event) {
+      logFileChange(event);
+    });
+
   // Sass Watch
-  gulp.watch(['components/**/*.scss', 'assets/scss/**/*.scss'], ['clean:css', 'sass'])
+  gulp.watch(['assets/scss/**/*.scss'], ['clean:css', 'sass'])
     .on('change', function(event) {
       logFileChange(event);
     }); 

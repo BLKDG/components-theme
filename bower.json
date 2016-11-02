@@ -1,16 +1,14 @@
 {
   "name": "components",
   "main": [
-    "assets/style.css",
-    "assets/scripts.js"
+    "assets/css/style.css",
+    "assets/js/scripts.js"
   ],
   "ignore": [],
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
     "slick-carousel": "^1.6.0",
-    "fancybox": "^2.1.5",
-    "jquery-ui": "^1.12.0",
-    "vertical-timeline": "^0.0.1",
-    "js-cookie": "^2.1.2"
+    "js-cookie": "^2.1.2",
+    "components-font-awesome": "^4.6.3"
   }
 }

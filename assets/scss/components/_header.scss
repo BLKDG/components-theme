@@ -1,0 +1,164 @@
+header{
+	padding:15px;
+	border-bottom:1px solid $gray-lighter;
+}
+
+.branding{
+	float:left;
+
+	h1{
+		margin:0;
+	}
+}
+
+.nav-mobile{
+	float:right;
+	@media (min-width: 768px) { 
+		display:none;
+	}	
+}
+
+.mobile-menu{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background: rgba($brand-primary, 0.95);
+	z-index:97;
+
+	.menu-primary-container{
+		text-align:center;
+		position: relative;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		ul{
+			list-style:none;
+			padding:0;
+			margin:0;
+			li{
+				line-height:1.8;
+				a{
+					text-decoration:none;
+					color:#fff;
+					font-size:30px;
+					transition:padding 0.3s;
+				}
+			}
+		}
+	}
+
+}
+
+
+
+#mobile-menu{
+	margin-top:0;
+	width: 30px;
+	height: 18px;
+	position: relative;
+	padding:17px 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-o-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+	cursor: pointer;
+	z-index:99;
+	span {
+		display: block;
+		position: absolute;
+		height: 3px;
+		width: 100%;
+		background: $brand-primary;
+		border-radius: 0;
+		opacity: 1;
+		left: 0;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: 0.3s ease-in-out;
+		-moz-transition: 0.3s ease-in-out;
+		-o-transition: 0.3s ease-in-out;
+		transition: 0.3s ease-in-out;
+
+		&:nth-child(1) {
+		  top: 8px;
+		}
+
+		&:nth-child(2), &:nth-child(3) {
+		  top: 16px;
+		}
+
+		&:nth-child(4) {
+		  top: 24px;
+		}
+
+	}
+	&.open span{
+		background:#000;
+
+		&:nth-child(1) {
+		  top: 8px;
+		  width: 0%;
+		  left: 50%;
+		}
+
+		&:nth-child(2) {
+		  -webkit-transform: rotate(45deg);
+		  -moz-transform: rotate(45deg);
+		  -o-transform: rotate(45deg);
+		  transform: rotate(45deg);
+		}
+
+		&:nth-child(3) {
+		  -webkit-transform: rotate(-45deg);
+		  -moz-transform: rotate(-45deg);
+		  -o-transform: rotate(-45deg);
+		  transform: rotate(-45deg);
+		}
+
+		&:nth-child(4) {
+		  top: 18px;
+		  width: 0%;
+		  left: 50%;
+		}
+	}
+}
+
+.nav-desktop{
+	display:none;
+	@media (min-width: 768px) { 
+		display:block;
+		float:right;
+	}
+	
+	.menu-primary-container{
+		ul{
+			list-style:none;
+			margin: 12px 0px 0;
+			li{
+				display:inline;
+				a{
+					display:inline-block;
+					margin:0 20px;
+					color:$gray;
+					transition:padding 0.3s;
+					@media (min-width: 768px) {
+						font-size:14px;
+					}
+
+				}
+
+			}
+		}
+
+	}
+}

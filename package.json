@@ -37,6 +37,8 @@
     "gulp-load-plugins": "^1.1.0",
     "gulp-minify-css": "^1.2.2",
     "gulp-notify": "^2.2.0",
+    "gulp-phpcbf": "latest",
+    "gulp-phpcs": "^1.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
@@ -53,6 +55,8 @@
   "scripts": {
     "build": "gulp build",
     "package": "gulp package --production",
+    "phpcs": "gulp phpcs",
+    "phpcbf": "gulp phpcbf",
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
     "watch": "gulp"

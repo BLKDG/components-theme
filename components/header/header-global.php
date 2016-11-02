@@ -1,17 +1,8 @@
-<header>
+<header class="clearfix">
 
 	<div class="branding">
 
 		<h1 class="title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-		<?php 
-		$description = get_bloginfo( 'description', 'display' );
-		if ( $description ) : 
-		?>
-
-			<p class="description"><?php echo $description; ?></p>
-
-		<?php endif; ?>
 
 	</div>
 

@@ -13,11 +13,18 @@ $icon-font-path: "../vendor/bootstrap-sass/assets/fonts/bootstrap/";
  */
 @import '../vendor/slick-carousel/slick/slick.scss';
 
+/**
+ * Typography
+ */
+$fa-font-path: '../vendor/components-font-awesome/fonts';
+@import '../vendor/components-font-awesome/scss/font-awesome';
+@import 'helpers/typography';
 
 /**
  * Global Variables
  */
 @import 'helpers/variables';
+@import 'helpers/typography';
 
 
 /**
@@ -35,5 +42,9 @@ $icon-font-path: "../vendor/bootstrap-sass/assets/fonts/bootstrap/";
 ***/
 @import 'partials/buttons';
 
-
+/**
+ * Component Styles
+ */
+@import 'components/header';
+@import 'components/footer';
 
