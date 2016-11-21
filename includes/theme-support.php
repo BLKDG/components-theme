@@ -23,15 +23,15 @@ if ( ! function_exists( 'components_theme_support' ) ) :
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 		 */
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1200, 9999 );
 
-		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'components-theme' )
+			'primary' => __( 'Primary Menu', 'components-theme' ),
+			'utility' => __( 'Utility Menu', 'components-theme' ),
+			'footer-menu' => __( 'Footer Menu', 'components-theme' ),
+			'footer-legal' => __( 'Footer Legal', 'components-theme' )
 		) );
 
 		/*
