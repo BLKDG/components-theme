@@ -28,7 +28,7 @@ header{
 	background: rgba($brand-primary, 0.95);
 	z-index:97;
 
-	.menu-primary-container{
+	>div{
 		text-align:center;
 		position: relative;
 		top: 50%;
