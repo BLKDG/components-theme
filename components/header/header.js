@@ -1,3 +1,6 @@
+/**
+ * Mobile Menu                                                                                                                                          [description]
+ */
 jQuery(document).ready(function($){
 
 	$('#mobile-menu').click(function(){
@@ -9,17 +12,16 @@ jQuery(document).ready(function($){
 
 });
 
+
 /**
  * Optional Pinned Header
  */
+jQuery(window).scroll(function (event) {
+    var scroll = jQuery(window).scrollTop();
 
-// jQuery(window).scroll(function (event) {
-//     var scroll = jQuery(window).scrollTop();
-
-//     if(scroll > 84){
-//     	jQuery('header').addClass('scroll');
-//     } else {
-//     	jQuery('header').removeClass('scroll');
-//     }
-
-// });
+    if(scroll > 84){
+    	jQuery('header').addClass('scroll');
+    } else {
+    	jQuery('header').removeClass('scroll');
+    }
+});

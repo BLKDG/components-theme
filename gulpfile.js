@@ -1,224 +1,117 @@
-/*jslint node: true */
 "use strict";
 
-var $           = require('gulp-load-plugins')();
-var argv        = require('yargs').argv;
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
-var merge       = require('merge-stream');
-var sequence    = require('run-sequence');
-var colors      = require('colors');
-var dateFormat  = require('dateformat');
-var del         = require('del');
+// Workflow:
+// 1. build components in the "components" folder
+// 2. write your SASS in the component's folder. 
+//   - it is compiled then concatenated with "assets/scss/base.scss"
+//   - includes perform as usual: SCSS files starting with "_" are ignored (test this)
+// 3. write your JS in the component's folder
+//   - don't use component.js as a filename
+//   - all JS in the component's folder is concatenated in the order "node-glob" uses
 
-// Enter URL of your local server here
-// Example: 'http://components.dev'
-var URL = '';
+// Future Features:
+// - JS linting
+// - production minification everywhere
+// - image compression
 
-// Check for --production flag
-var isProduction = !!(argv.production);
+var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var watch = require('gulp-watch');
+var livereload = require('gulp-livereload');
+var sourceUrls = require('gulp-source-url');
+var changed = require('gulp-changed');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
 
-// Browsers to target when prefixing CSS.
-var COMPATIBILITY = ['last 2 versions', 'ie >= 9'];
+var argv = require('yargs').argv;
+var colors = require('colors');
+var del = require('del');
+var fs = require('fs'); 
+var merge = require('merge-stream');
+var path = require('path');
 
-// File paths to various assets are defined here.
-var PATHS = {
-  sass: [
-    'assets/scss/**/*.scss',
-    'components/**/*.scss'
-  ],
-  javascript: [
+var isProduction = !!(argv.production); // --production flag
+var componentsPath = 'components/';
 
-    //'components/**/*.js'
-
-  ],
-  phpcs: [
-    '**/*.php',
-    '!wpcs',
-    '!wpcs/**',
-  ],
-  pkg: [
-    '**/*',
-    '!**/node_modules/**',
-    '!**/vendor/**',
-    '!**/scss/**',
-    '!**/bower.json',
-    '!**/gulpfile.js',
-    '!**/package.json',
-    // '!**/composer.json',
-    // '!**/composer.lock',
-    '!**/codesniffer.ruleset.xml',
-    '!**/packaged/*',
-  ]
-};
-
-
-// Browsersync task
-gulp.task('browser-sync', ['build'], function() {
-
-  var files = [
-            '**/*.php',
-            'assets/img/**/*.{png,jpg,gif}',
-          ];
-
-  browserSync.init(files, {
-    // Proxy address
-    proxy: URL,
-
-    // Port #
-    // port: PORT
-  });
-});
-
-
-// Compile Sass into CSS
-// In production, the CSS is compressed
-gulp.task('sass', function() {
-  // Minify CSS if run wtih --production flag
-  var minifycss = $.if(isProduction, $.minifyCss());
-
-  return gulp.src(['assets/scss/styles.scss', 'components/**/*.scss'])
-    .pipe($.sourcemaps.init())
-    .pipe($.concat('styles.css'))
-    .pipe($.sass({
-      includePaths: PATHS.sass
-    }))
-    .on('error', $.notify.onError({
-        message: "<%= error.message %>",
-        title: "Sass Error"
-    }))
-    .pipe($.autoprefixer({
-      browsers: COMPATIBILITY
-    }))
-    .pipe(minifycss)
-    .pipe($.if(!isProduction, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('assets/css'))
-    .pipe(browserSync.stream({match: '**/*.css'}));
-});
-
-// Combine JavaScript into one file
-// In production, the file is minified
-gulp.task('javascript', function() {
-  var uglify = $.uglify()
-    .on('error', $.notify.onError({
-      message: "<%= error.message %>",
-      title: "Uglify JS Error"
-    }));
-
-  return gulp.src(PATHS.javascript)
-    .pipe($.sourcemaps.init())
-    .pipe($.concat('js/scripts.js'))
-    .pipe($.if(isProduction, uglify))
-    .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('assets'))
-    .pipe(browserSync.stream());
-});
-
-
-// Lint all JS files in custom directory
-gulp.task('lint', function() {
-  return gulp.src('components/**/*.js')
-    .pipe($.jshint())
-    .pipe($.notify(function (file) {
-      if (file.jshint.success) {
-        return false;
-      }
-
-      var errors = file.jshint.results.map(function (data) {
-        if (data.error) {
-          return "(" + data.error.line + ':' + data.error.character + ') ' + data.error.reason;
-        }
-      }).join("\n");
-      return file.relative + " (" + file.jshint.results.length + " errors)\n" + errors;
-    }));
-});
-
-// Package task
-gulp.task('package', ['build'], function() {
-  var fs = require('fs');
-  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM");
-  var pkg = JSON.parse(fs.readFileSync('./package.json'));
-  var title = pkg.name + '_' + time + '.zip';
-
-  return gulp.src(PATHS.pkg)
-    .pipe($.zip(title))
-    .pipe(gulp.dest('packaged'));
-});
-
-// Build task
-// Runs copy then runs sass & javascript in parallel
-gulp.task('build', ['clean'], function(done) {
-  sequence(['sass', 'javascript', 'lint'],
-          done);
-});
-
-// PHP Code Sniffer task
-gulp.task('phpcs', function() {
-  return gulp.src(PATHS.phpcs)
-    .pipe($.phpcs({
-      bin: 'wpcs/vendor/bin/phpcs',
-      standard: './codesniffer.ruleset.xml',
-      showSniffCode: true,
-    }))
-    .pipe($.phpcs.reporter('log'));
-});
-
-// PHP Code Beautifier task
-gulp.task('phpcbf', function () {
-  return gulp.src(PATHS.phpcs)
-  .pipe($.phpcbf({
-    bin: 'wpcs/vendor/bin/phpcbf',
-    standard: './codesniffer.ruleset.xml',
-    warningSeverity: 0
-  }))
-  .on('error', $.util.log)
-  .pipe(gulp.dest('.'));
-});
-
-// Clean task
-gulp.task('clean', function(done) {
-  sequence(['clean:javascript', 'clean:css'],
-            done);
-});
-
-// Clean JS
-gulp.task('clean:javascript', function() {
-  return del([
-      'assets/scripts.js'
-    ]);
-});
-
-// Clean CSS
-gulp.task('clean:css', function() {
-  return del([
-      'assets/styles.css',
-      'assets/styles.css.map'
-    ]);
-});
-
-// Default gulp task
-// Run build task and watch for file changes
-gulp.task('default', ['build', 'browser-sync'], function() {
-  // Log file changes to console
-  function logFileChange(event) {
+function logFileChange(event) {
     var fileName = require('path').relative(__dirname, event.path);
-    console.log('[' + 'WATCH'.green + '] ' + fileName.magenta + ' was ' + event.type + ', running tasks...');
-  }
+    console.log('[' + 'WATCH'.green + '] ' + fileName.magenta + ' was ' + event.event + ', running tasks...');
+}
 
-  gulp.watch(['components/**/*.scss'], ['sass'])
-    .on('change', function(event) {
-      logFileChange(event);
+function getFolders(dir) {
+    return fs.readdirSync(dir)
+    .filter(function(file) {
+        return fs.statSync(path.join(dir, file)).isDirectory();
+    });
+}
+
+/**
+ * NOTE: UNUSED - scripts.js is not being used in the project atm
+ */
+gulp.task('js:theme', ['clean:js'], function() {
+    return gulp.src(['assets/js/custom/**/*.js']) 
+        .pipe($.sourcemaps.init())
+            .pipe($.concat('scripts.js'))
+        .pipe($.sourcemaps.write('.')) 
+        .pipe(sourceUrls('.')) 
+        .pipe(gulp.dest('assets/js'));    
+});
+
+gulp.task('sass', sass);
+function sass() {
+    return gulp.src(['assets/scss/styles.scss', 'components/**/*.scss']) 
+        .pipe($.sourcemaps.init())
+        .pipe($.sass())
+        .on('error', $.notify.onError({ message: "<%= error.message %>", title: "Sass Error" }))
+        .pipe($.concat('styles.css'))
+        .pipe($.autoprefixer({ browsers: ['last 2 versions', 'ie >= 9'] }))
+        .pipe($.if(isProduction, $.minifyCss())) 
+        .pipe( $.sourcemaps.write('.')) 
+        .pipe(gulp.dest('assets/css'))
+        .pipe(livereload());
+}
+
+gulp.task('js:components', ['clean:components'], jsComponents);
+function jsComponents() {
+    var compilePublicComponents = getFolders(componentsPath).map(function(folder) {
+        return gulp.src([path.join(componentsPath, folder, '/**/*.js')]) // can use any configuration of js directory structure within component
+            .pipe($.sourcemaps.init())
+            .pipe(sourceUrls('.')) 
+            .pipe($.concat(folder + '.min.js'))
+            .pipe(gulp.dest(componentsPath + folder))
+            .pipe($.uglify())
+            .pipe($.sourcemaps.write('.'))
+            .pipe(gulp.dest(componentsPath + folder));
     });
 
-  // Sass Watch
-  gulp.watch(['assets/scss/**/*.scss'], ['clean:css', 'sass'])
-    .on('change', function(event) {
-      logFileChange(event);
-    }); 
 
-  // JS Watch
-  gulp.watch(['components/**/*.js'], ['clean:javascript', 'javascript', 'lint'])
-    .on('change', function(event) {
-      logFileChange(event);
+    return compilePublicComponents;
+}
+
+gulp.task('clean:js', function () {
+    return del(['assets/js/scripts.js']);
+})
+
+gulp.task('clean:components', function () {
+    return del(['components/**/*.min.js']);
+})
+
+gulp.task('default', ['sass', 'js:components'], function() {
+    livereload.listen();
+
+    watch(['components/**/*.js', '!components/**/*.min.js'], function (v) {
+        logFileChange(v);
+        gulp.run('js:components');
     });
+
+    watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
+        logFileChange(v);
+        gulp.run('sass');
+    });
+    
+    watch(['*.php', '**/*.php'], function (event) {
+        var fileName = require('path').relative(__dirname, event.path);
+        livereload.reload(fileName);
+    });
+
 });

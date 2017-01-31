@@ -139,28 +139,27 @@ header{
 		display:block;
 		float:right;
 	}
-	
-	.menu-primary-menu-container{
-		ul{
-			list-style:none;
-			margin: 12px 0px 0;
-			li{
-				display:inline;
-				a{
-					display:inline-block;
-					margin:0 20px;
-					color:$gray;
-					transition:padding 0.3s;
-					@media (min-width: 768px) {
-						font-size:14px;
-					}
 
+	ul{
+		list-style:none;
+		margin: 12px 0px 0;
+
+		li{
+			display:inline;
+			a{
+				display:inline-block;
+				margin:0 20px;
+				color:$gray;
+				transition:padding 0.3s;
+				@media (min-width: 768px) {
+					font-size:14px;
 				}
 
 			}
-		}
 
+		}
 	}
+
 }
 
 .utility-desktop{

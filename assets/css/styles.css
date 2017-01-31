@@ -5944,8 +5944,7 @@ button.close {
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-  -webkit-filter: none;
-          filter: none; }
+  filter: none; }
 
 .fa-stack {
   position: relative;
@@ -8129,10 +8128,19 @@ button.close {
 /**
  * Global Variables
  */
+body {
+  margin-bottom: -1px; }
+  body img {
+    display: inline; }
+
 /***
  * 
- * Variables User throughout our build
+ * Variables User throughout our build - Bootstrap
  * Colors, Font Families, Etc. 
+ *
+ * THIS IS COPIED WHOLESALE FROM BOOTSTRAP. Y
+ *
+ * 
  ***/
 /**
  * Functions
@@ -8155,7 +8163,7 @@ button.close {
  *  
  ***/
 /**
- * Component Styles
+ * Components
  */
 header {
   padding: 15px;
@@ -8179,21 +8187,21 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(51, 122, 183, 0.95);
+  background: rgba(0, 45, 115, 0.95);
   z-index: 97; }
-  .mobile-menu .menu-primary-container {
+  .mobile-menu > div {
     text-align: center;
     position: relative;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
-    .mobile-menu .menu-primary-container ul {
+    .mobile-menu > div ul {
       list-style: none;
       padding: 0;
       margin: 0; }
-      .mobile-menu .menu-primary-container ul li {
+      .mobile-menu > div ul li {
         line-height: 1.8; }
-        .mobile-menu .menu-primary-container ul li a {
+        .mobile-menu > div ul li a {
           text-decoration: none;
           color: #fff;
           font-size: 30px;
@@ -8215,7 +8223,7 @@ header {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #337ab7;
+    background: #002d73;
     border-radius: 0;
     opacity: 1;
     left: 0;
@@ -8251,18 +8259,38 @@ header {
     .nav-desktop {
       display: block;
       float: right; } }
-  .nav-desktop .menu-primary-container ul {
+  .nav-desktop ul {
     list-style: none;
     margin: 12px 0px 0; }
-    .nav-desktop .menu-primary-container ul li {
+    .nav-desktop ul li {
       display: inline; }
-      .nav-desktop .menu-primary-container ul li a {
+      .nav-desktop ul li a {
         display: inline-block;
         margin: 0 20px;
         color: #555555;
         transition: padding 0.3s; }
         @media (min-width: 768px) {
-          .nav-desktop .menu-primary-container ul li a {
+          .nav-desktop ul li a {
+            font-size: 14px; } }
+
+.utility-desktop {
+  display: none; }
+  @media (min-width: 768px) {
+    .utility-desktop {
+      display: block;
+      float: right; } }
+  .utility-desktop ul {
+    list-style: none;
+    margin: 12px 0px 0; }
+    .utility-desktop ul li {
+      display: inline; }
+      .utility-desktop ul li a {
+        display: inline-block;
+        margin: 0 20px;
+        color: #555555;
+        transition: padding 0.3s; }
+        @media (min-width: 768px) {
+          .utility-desktop ul li a {
             font-size: 14px; } }
 
 footer {

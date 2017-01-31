@@ -52,13 +52,13 @@
     "run-sequence": "^1.1.5",
     "yargs": "^3.31.0"
   },
-  "scripts": {
-    "build": "gulp build",
-    "package": "gulp package --production",
-    "phpcs": "gulp phpcs",
-    "phpcbf": "gulp phpcbf",
-    "postinstall": "bower install && gulp build",
-    "production": "gulp --production",
-    "watch": "gulp"
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "gulp-changed": "^1.3.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-source-url": "^0.1.2",
+    "gulp-watch": "^4.3.9",
+    "vinyl-paths": "^2.1.0"
   }
 }

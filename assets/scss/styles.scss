@@ -23,6 +23,7 @@ $fa-font-path: '../vendor/components-font-awesome/fonts';
 /**
  * Global Variables
  */
+@import 'helpers/global';
 @import 'helpers/variables';
 @import 'helpers/typography';
 
@@ -41,9 +42,9 @@ $fa-font-path: '../vendor/components-font-awesome/fonts';
 ***/
 @import 'partials/buttons';
 
-/**
- * Component Styles
- */
-@import 'components/header';
-@import 'components/footer';
 
+/**
+ * Components
+ */
+@import '../../components/header/header';
+@import '../../components/footer/footer';
