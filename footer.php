@@ -1,6 +1,6 @@
 		<div class="container">
 			<div class="row">
-				<footer>
+				<footer class="coil-xs-12">
 				
 					<?php get_template_part( componentRoute('footer'), 'nav' ); ?>
 					<?php get_template_part( componentRoute('footer'), 'legal' ); ?>

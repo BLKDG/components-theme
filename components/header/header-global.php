@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<header class="clearfix">
+		<header class="col-xs-12 clearfix">
 			<?php if ( has_nav_menu( 'utility' )) : ?>
 				<div class="utility clearfix">
 					<nav role="navigation" class="utility-desktop">
