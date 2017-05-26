@@ -5,6 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
+ * This template is taken essentially wholesale from the twentyseventeen wp template
  * @package WordPress
  * @subpackage components-theme
  * @since Components Theme 0.1
@@ -26,6 +27,7 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 				$comments_number = get_comments_number();
+
 				if ( 1 === $comments_number ) {
 					/* translators: %s: post title */
 					printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'components-theme' ), get_the_title() );

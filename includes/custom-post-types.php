@@ -1,6 +1,5 @@
 <?php
-
-// Event Post Type
+// Here's an example post type.
 register_post_type( 'event',
     array(
         'labels' => array(

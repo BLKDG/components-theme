@@ -22,7 +22,7 @@
 
 			</div>
 
-			<?php get_template_part( componentRoute('header'), 'navigation' ); ?>
+			<?php renderComponent('header', 'navigation' ); ?>
 
 		</header>
 	</div>

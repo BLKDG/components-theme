@@ -4,14 +4,18 @@
  */
 
 get_header();
-	if ( have_posts() ) :
-		
-		while ( have_posts() ) : the_post();
+	
+	while ( have_posts() ) : the_post();
 
-			renderComponent('post-content', get_post_format() );
+		renderComponent('post', get_post_format() );
 
-		endwhile;
+		the_post_navigation();
 
-	endif;
+		if ( comments_open() || get_comments_number() ) :
+			comments_template();
+		endif;
+
+
+	endwhile;
 	
 get_footer(); ?>
