@@ -29,6 +29,8 @@ var del = require('del');
 var fs = require('fs'); 
 var merge = require('merge-stream');
 var path = require('path');
+var inject = require('gulp-inject');
+var sort = require('gulp-sort');
 
 var isProduction = !!(argv.production); // --production flag
 var componentsPath = 'components/';
@@ -57,9 +59,26 @@ gulp.task('js:theme', ['clean:js'], function() {
         .pipe(gulp.dest('assets/js'));    
 });
 
+gulp.task('inject:scss', () => {
+    return gulp.src('assets/scss/styles.scss')
+        .pipe(inject(
+            gulp.src('components/**/*.scss', {read: false})
+                .pipe(sort()),
+            {
+                transform: (filepath) => {
+                    let newPath = filepath
+                        .replace(`/components/`, '../../components/')
+                        .replace(/_(.*).scss/, (match, p1, offset, string) => p1)
+                        .replace('.scss', '');
+                    return `@import '${newPath}';`;
+                }
+            }))
+        .pipe(gulp.dest(`assets/scss`));
+});
+
 gulp.task('sass', sass);
 function sass() {
-    return gulp.src(['assets/scss/styles.scss', 'components/**/*.scss']) 
+    return gulp.src(['assets/scss/styles.scss']) 
         .pipe($.sourcemaps.init())
         .pipe($.sass())
         .on('error', $.notify.onError({ message: "<%= error.message %>", title: "Sass Error" }))
@@ -96,12 +115,17 @@ gulp.task('clean:components', function () {
     return del(['components/**/*.min.js']);
 })
 
-gulp.task('default', ['sass', 'js:components'], function() {
+gulp.task('default', ['inject:scss','sass', 'js:components'], function() {
     livereload.listen();
 
     watch(['components/**/*.js', '!components/**/*.min.js'], function (v) {
         logFileChange(v);
         gulp.run('js:components');
+    });
+
+    watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
+        logFileChange(v);
+        gulp.run('inject:scss');
     });
 
     watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {

@@ -1,20 +1,21 @@
 <?php
 /**
- * Standard Blog Template
+ * Standard Page Template
  */
 
-get_header(); ?>
-
-	<?php if ( have_posts() ) : 
-
+get_header();
+	if ( have_posts() ) :
+		
 		while ( have_posts() ) : the_post();
 
 			the_content();
 
 		endwhile;
 
+	else :
+
+		renderComponent('post-content', 'empty' );
+
 	endif;
-	?>
-
-
-<?php get_footer(); ?>
+	
+get_footer(); ?>
