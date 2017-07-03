@@ -3,14 +3,14 @@
  * Registers a widget area.
  */
 
-function components_theme_sidebars() {
+function components_theme_widgets() {
 
 	/**
-	 * Register our first footer widget (who the hell uses sidebars anyway?)
+	 * Register a sidebar
 	 */
 	register_sidebar( array(
-		'name'          => __( 'Footer Widget One', 'components-theme' ),
-		'id'            => 'footer-widget-1',
+		'name'          => __( 'Sidebar Widget', 'components-theme' ),
+		'id'            => 'sidebar_1',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'components-theme' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -19,4 +19,4 @@ function components_theme_sidebars() {
 	) );
 
 }
-add_action( 'widgets_init', 'components_theme_sidebars' );
+add_action( 'widgets_init', 'components_theme_widgets' );

@@ -1,4 +1,3 @@
-
 		<footer>
 		
 			<?php renderComponent('footer', 'nav' ); ?>

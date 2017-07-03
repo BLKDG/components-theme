@@ -1,27 +1,39 @@
-/**
- * Mobile Menu                                                                                                                                          [description]
- */
-jQuery(document).ready(function($){
+;(function ($) {
 
-	$('#mobile-menu').click(function(){
-		$(this).toggleClass('open');
+    $(document).ready(function(){
 
-		$('.mobile-menu').fadeToggle();
-		$('.utility').fadeToggle();
-	});
+        $('#mobile-menu').click(function(){
+            $(this).toggleClass('open');
 
-});
+            $('.mobile-menu').fadeToggle();
+            $('.utility').fadeToggle();
+        });   
+
+    });
 
 
-/**
- * Optional Pinned Header
- */
-jQuery(window).scroll(function (event) {
-    var scroll = jQuery(window).scrollTop();
+    $(window).load(function(){
 
-    if(scroll > 84){
-    	jQuery('header').addClass('scroll');
-    } else {
-    	jQuery('header').removeClass('scroll');
-    }
-});
+        
+    });
+
+
+    $(window).resize(function(){
+
+
+    });
+
+    /**
+     * Optional Pinned Header
+     */
+    $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+
+        if(scroll > 84){
+            $('header').addClass('scroll');
+        } else {
+            $('header').removeClass('scroll');
+        }
+    });
+
+})(jQuery);

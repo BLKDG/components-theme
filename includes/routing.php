@@ -23,4 +23,6 @@ function renderComponent($component, $component_name = false, $DATA = false){
 
 	require(get_template_directory() . $component_view);
 
+	// Just making phpmd happy :(
+	unset($DATA);
 }

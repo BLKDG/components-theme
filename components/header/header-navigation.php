@@ -13,7 +13,7 @@
 
 		</nav>
 
-		<nav role="navigation" class="nav-mobile">
+		<nav class="nav-mobile">
 
 			<div id="mobile-menu">
 				<span></span>

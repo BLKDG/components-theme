@@ -1,38 +1,12 @@
 "use strict";
 
-// Workflow:
-// 1. build components in the "components" folder
-// 2. write your SASS in the component's folder. 
-//   - it is compiled then concatenated with "assets/scss/base.scss"
-//   - includes perform as usual: SCSS files starting with "_" are ignored (test this)
-// 3. write your JS in the component's folder
-//   - don't use component.js as a filename
-//   - all JS in the component's folder is concatenated in the order "node-glob" uses
-
-// Future Features:
-// - JS linting
-// - production minification everywhere
-// - image compression
-
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var watch = require('gulp-watch');
-var livereload = require('gulp-livereload');
-var sourceUrls = require('gulp-source-url');
-var changed = require('gulp-changed');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-
-var argv = require('yargs').argv;
-var colors = require('colors');
 var del = require('del');
+var sourceUrls = require('gulp-source-url');
 var fs = require('fs'); 
 var merge = require('merge-stream');
 var path = require('path');
-var inject = require('gulp-inject');
-var sort = require('gulp-sort');
-
-var isProduction = !!(argv.production); // --production flag
 var componentsPath = 'components/';
 
 function logFileChange(event) {
@@ -47,23 +21,11 @@ function getFolders(dir) {
     });
 }
 
-/**
- * NOTE: UNUSED - scripts.js is not being used in the project atm
- */
-gulp.task('js:theme', ['clean:js'], function() {
-    return gulp.src(['assets/js/custom/**/*.js']) 
-        .pipe($.sourcemaps.init())
-            .pipe($.concat('scripts.js'))
-        .pipe($.sourcemaps.write('.')) 
-        .pipe(sourceUrls('.')) 
-        .pipe(gulp.dest('assets/js'));    
-});
-
-gulp.task('inject:scss', () => {
+gulp.task('sass:inject', () => {
     return gulp.src('assets/scss/styles.scss')
-        .pipe(inject(
+        .pipe($.inject(
             gulp.src('components/**/*.scss', {read: false})
-                .pipe(sort()),
+                .pipe($.sort()),
             {
                 transform: (filepath) => {
                     let newPath = filepath
@@ -84,16 +46,26 @@ function sass() {
         .on('error', $.notify.onError({ message: "<%= error.message %>", title: "Sass Error" }))
         .pipe($.concat('styles.css'))
         .pipe($.autoprefixer({ browsers: ['last 2 versions', 'ie >= 9'] }))
-        .pipe($.if(isProduction, $.minifyCss())) 
+        .pipe($.minifyCss())
         .pipe( $.sourcemaps.write('.')) 
         .pipe(gulp.dest('assets/css'))
-        .pipe(livereload());
+}
+
+gulp.task('js:globals', ['clean:js'], jsGlobals);
+function jsGlobals() {
+    return gulp.src(['assets/js/*.js'])
+        .pipe($.sourcemaps.init())
+        .pipe(sourceUrls('.')) 
+        .pipe($.uglify())
+        .pipe($.rename({ suffix: '.min' }))
+        .pipe($.sourcemaps.write('.'))
+        .pipe(gulp.dest('assets/js'));
 }
 
 gulp.task('js:components', ['clean:components'], jsComponents);
 function jsComponents() {
     var compilePublicComponents = getFolders(componentsPath).map(function(folder) {
-        return gulp.src([path.join(componentsPath, folder, '/**/*.js')]) // can use any configuration of js directory structure within component
+        return gulp.src([path.join(componentsPath, folder, '/**/*.js')])
             .pipe($.sourcemaps.init())
             .pipe(sourceUrls('.')) 
             .pipe($.concat(folder + '.min.js'))
@@ -103,39 +75,38 @@ function jsComponents() {
             .pipe(gulp.dest(componentsPath + folder));
     });
 
-
     return compilePublicComponents;
 }
 
+
 gulp.task('clean:js', function () {
-    return del(['assets/js/scripts.js']);
+    return del(['assets/js/*.min.js','assets/js/**/*.min.js']);
 })
 
 gulp.task('clean:components', function () {
     return del(['components/**/*.min.js']);
 })
 
-gulp.task('default', ['inject:scss','sass', 'js:components'], function() {
-    livereload.listen();
+gulp.task('default', ['sass:inject','sass', 'js:components', 'js:globals'], function() {
 
-    watch(['components/**/*.js', '!components/**/*.min.js'], function (v) {
+    $.watch(['assets/js/*.js', '!assets/js/*.min.js'], function (v) {
+        logFileChange(v);
+        gulp.run('js:globals');
+    });
+    
+    $.watch(['components/**/*.js', '!components/**/*.min.js'], function (v) {
         logFileChange(v);
         gulp.run('js:components');
     });
 
-    watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
+    $.watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
         logFileChange(v);
-        gulp.run('inject:scss');
+        gulp.run('sass:inject');
     });
 
-    watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
+    $.watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
         logFileChange(v);
         gulp.run('sass');
     });
     
-    watch(['*.php', '**/*.php'], function (event) {
-        var fileName = require('path').relative(__dirname, event.path);
-        livereload.reload(fileName);
-    });
-
 });
