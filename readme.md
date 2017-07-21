@@ -31,7 +31,7 @@ In taking some queues from the MVC model, we're now treating high level template
 	while ( have_posts() ) : the_post(); ?>
 
 		<?php
-			// Instantiate a new Class
+			// Create a new Object
 			$object = new StdClass;
 
 			// Pass your data into the new class
@@ -51,7 +51,7 @@ This is helpful because we may want to reuse this component somewhere else in th
 ```
 ...
 		<?php
-			// Instantiate a new Class
+			// Create a new Object
 			$object = new StdClass;
 
 			// Pass your data into the new class
