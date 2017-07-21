@@ -99,7 +99,7 @@ gulp.task('default', ['sass:inject','sass', 'js:components', 'js:globals'], func
         gulp.run('js:components');
     });
 
-    $.watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
+    $.watch(['components/**/*.scss', 'assets/scss/**/*.scss', '!assets/scss/styles.scss'], function (v) {
         logFileChange(v);
         gulp.run('sass:inject');
     });
