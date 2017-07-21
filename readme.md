@@ -50,18 +50,18 @@ This is helpful because we may want to reuse this component somewhere else in th
 
 ```
 ...
-		<?php
-			// Create a new Object
-			$object = new StdClass;
+<?php
+	// Create a new Object
+	$object = new StdClass;
 
-			// Pass your data into the new class
-			$object->title = get_field('section_header');
-			$image = get_field('background_image');
-			$object->image = $image['url'];
+	// Pass your data into the new class
+	$object->title = get_field('section_header');
+	$image = get_field('background_image');
+	$object->image = $image['url'];
 
-			// Render the component that consumes that class with the $data
-			renderComponent('section', 'title', $object);
-		?>
+	// Render the component that consumes that class with the $data
+	renderComponent('section', 'title', $object);
+?>
 ...
 ```
 
