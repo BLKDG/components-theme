@@ -34,11 +34,11 @@ In taking some queues from the MVC model, we're now treating high level template
 			// Create a new Object
 			$object = new StdClass;
 
-			// Pass your data into the new class
+			// Pass your data into the new object
 			$object->title = get_the_title();
 			$object->image = get_the_post_thumbnail_url();
 		
-			// Render the component that consumes that class with the $data
+			// Render the component and include our data object
 			renderComponent('section', 'title', $object);
 		?>
 
@@ -54,12 +54,12 @@ This is helpful because we may want to reuse this component somewhere else in th
 	// Create a new Object
 	$object = new StdClass;
 
-	// Pass your data into the new class
+	// Pass your data into the new object
 	$object->title = get_field('section_header');
 	$image = get_field('background_image');
 	$object->image = $image['url'];
 
-	// Render the component that consumes that class with the $data
+	// Render the component and include our data object
 	renderComponent('section', 'title', $object);
 ?>
 ...
