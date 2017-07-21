@@ -1,5 +1,5 @@
 # The Components Theme
-## By BLKDG
+By BLKDG
 
 The components theme utilizes Component Based Development (CBD) practices within the Wordpress theme. Following some simple guidelines, the theme is set up to separate out component views from the templates, allowing developers to treat components as truly reusable views.
 
@@ -88,10 +88,7 @@ When creating the component php file, we found that it is very helpful to list o
  * @param string $DATA->image
  */
 
-
-?>
-
-<?php if(isset($DATA->title)){ ?>
+if(isset($DATA->title)){ ?>
     <div class="section-title">
 		<h1><?php echo $DATA->title; ?></h1>
 		<?php echo ($DATA->image)? '<img src=".$DATA->image.">' : ''; ?>
