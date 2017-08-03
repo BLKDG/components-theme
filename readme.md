@@ -3,6 +3,7 @@ By BLKDG
 
 The Components Theme is a Wordpress theme that utilizes Component Based Development (CBD) practices. Following some simple guidelines, the theme is set up to separate out component views from the templates, allowing developers to treat components as truly reusable views.
 
+
 ## Getting Started
 
 Run the following commands from your terminal.
@@ -10,6 +11,7 @@ Run the following commands from your terminal.
 `npm install`
 
 `gulp`
+
 
 ## The Toolkit
 
@@ -22,13 +24,16 @@ We've found what works for us at BLKDG and have continually added to the arsenal
 * JS Cookie - This plugin helps us utilize cookies with javascript, since Sessions & Cookies can be tricky to work with the WP Engine environment (which we use exclusively for hosting)
 * Slick Carousel - By far the best slider plugin we've every used. 
 
+
 ## Development Practices
 
 In order to take advantage of the system we'll want to think about our files a little differently. 
 
+
 ### 1. The Includes Folder
 
 The includes folder contains most of our system code & (as we like to refer to them) models. Outside of what is already set up (enqueue scripts, theme cleanup & support), we can also add our Classes & Methods (functions) to handle more custom/complicated calls to the database. Be sure to add any file you create in the includes folder to the functions.php file.
+
 
 ### 2. Template Files
 
@@ -76,6 +81,7 @@ This is helpful because we may want to reuse this component somewhere else in th
 ...
 ```
 
+
 ### 3. Components
 
 Now we'll look at the components themselves. Gulp is set up to automatically comb our components for sass files, so you can create as many sass files in the components folders as you like. We've include an `enqueue_scripts()` function in our `renderComponent()` function that calls the component js file on demand. So that file will only be called if the related components php file is being used on the page. Gulp will automatically minify and uglify the js files you create. Using our example above, the components folder structure may look something like this:
@@ -107,6 +113,7 @@ if(isset($DATA->title)){ ?>
 <?php } ?>
 
 ```
+
 
 ## Theme Enhancements & Updates
 
