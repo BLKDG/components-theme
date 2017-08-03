@@ -5,6 +5,9 @@
  * 
  */
 
+// Environment Variables
+include_once('includes/env.php');
+
 // Cleanup Wordpress defaults
 include_once('includes/cleanup.php');
 
