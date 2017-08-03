@@ -8,7 +8,7 @@ The Components Theme is a Wordpress theme that utilizes Component Based Developm
 Run the following commands from your terminal.
 
 `npm install`
-`bower install`
+
 `gulp`
 
 ## The Toolkit
