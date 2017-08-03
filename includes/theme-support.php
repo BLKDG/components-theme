@@ -61,6 +61,23 @@ if ( ! function_exists( 'components_theme_support' ) ) :
 			'audio',
 			'chat',
 		) );
+
+		/**
+		 * Register our widgetized areas.
+		 */
+		function widgets_init() {
+
+			register_sidebar( array(
+				'name'          => 'Widget Area 1',
+				'id'            => 'widget_1',
+				'before_widget' => '<div>',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h2>',
+				'after_title'   => '</h2>',
+			) );
+
+		}
+		add_action( 'widgets_init', 'widgets_init' );
 	}
 	add_action( 'after_setup_theme', 'components_theme_support' );
 endif; // components_theme_support
