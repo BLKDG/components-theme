@@ -15,12 +15,12 @@ Run the following commands from your terminal.
 
 We've found what works for us at BLKDG and have continually added to the arsenal. The general thought is that the NPM packages are only used locally during the dev process and are in the gitignore file. The bower packages are plugins and other tools that we utilize everywhere, so those get shipped with the production code and are included in `assets/vendor`. Below is the list of bower packages. Not all packages are enqueued, but its nice to know they are there. You can see the list of enqueued javascript plugins in `includes/enqueue-scripts.php`.
 
-Bootstrap Sass (We'll be updating to Bootstrap 4.0 when its ready for production)
-Font Awesome
-Fancybox - A flexible lightbox plugin
-GSAP - An incredible animation library
-JS Cookie - This plugin helps us utilize cookies with javascript, since Sessions & Cookies can be tricky to work with the WP Engine environment (which we use exclusively for hosting)
-Slick Carousel - By far the best slider plugin we've every used. 
+* Bootstrap Sass (We'll be updating to Bootstrap 4.0 when its ready for production)
+* Font Awesome
+* Fancybox - A flexible lightbox plugin
+* GSAP - An incredible animation library
+* JS Cookie - This plugin helps us utilize cookies with javascript, since Sessions & Cookies can be tricky to work with the WP Engine environment (which we use exclusively for hosting)
+* Slick Carousel - By far the best slider plugin we've every used. 
 
 ## Development Practices
 
