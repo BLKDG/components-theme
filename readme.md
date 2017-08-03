@@ -111,5 +111,6 @@ if(isset($DATA->title)){ ?>
 ## Theme Enhancements & Updates
 
 We utilize the Trello board below to manage development tasks
+
 https://trello.com/b/mlqDk6Ff/components-theme
 
