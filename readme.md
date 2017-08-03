@@ -1,7 +1,7 @@
 # The Components Theme
 By BLKDG
 
-The components theme utilizes Component Based Development (CBD) practices within the Wordpress theme. Following some simple guidelines, the theme is set up to separate out component views from the templates, allowing developers to treat components as truly reusable views.
+The Components Theme is a Wordpress theme that utilizes Component Based Development (CBD) practices. Following some simple guidelines, the theme is set up to separate out component views from the templates, allowing developers to treat components as truly reusable views.
 
 ## Getting Started
 
@@ -108,5 +108,8 @@ if(isset($DATA->title)){ ?>
 
 ```
 
+## Theme Enhancements & Updates
 
+We utilize the Trello board below to manage development tasks
+https://trello.com/b/mlqDk6Ff/components-theme
 
