@@ -7,6 +7,8 @@
 
 	<h1><?php the_title(); ?></h1>
 
+	<?php renderComponent('post', 'share'); ?>
+
 	<?php the_post_thumbnail(); ?>
 
 	<?php the_content(); ?>
