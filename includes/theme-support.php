@@ -62,6 +62,12 @@ if ( ! function_exists( 'components_theme_support' ) ) :
 			'chat',
 		) );
 
+
+		/**
+		 * Woocommerce Theme Support
+		 */
+		add_theme_support( 'woocommerce' );
+
 		/**
 		 * Register our widgetized areas.
 		 */
@@ -82,11 +88,3 @@ if ( ! function_exists( 'components_theme_support' ) ) :
 	}
 	add_action( 'after_setup_theme', 'components_theme_support' );
 endif; // components_theme_support
-
-/**
- * Declare Theme Support for Woocommerce
- */
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
-add_action( 'after_setup_theme', 'woocommerce_support' );
