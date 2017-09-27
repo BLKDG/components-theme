@@ -1,0 +1,18 @@
+.woocommerce{ 
+	input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), select, textarea{
+		@extend .form-control;
+	}
+}
+
+.woocommerce-order-received{
+
+	.woocommerce{
+		@extend .container;
+
+		.woocommerce-order{
+			@extend .row;
+			margin:0;
+		}
+	}
+
+}

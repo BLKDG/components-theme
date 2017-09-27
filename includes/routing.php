@@ -21,7 +21,7 @@ function renderComponent($component, $component_name = false, $DATA = false){
 		$component_view = '/components/'.$component.'/'.$component.'.php';
 	}
 
-	require(get_template_directory() . $component_view);
+	include get_template_directory() . $component_view;
 
 	// Just making phpmd happy :(
 	unset($DATA);
