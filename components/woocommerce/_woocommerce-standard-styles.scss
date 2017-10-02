@@ -1,7 +1,61 @@
 .woocommerce{ 
+	@extend .padding-top-md;
+	@extend .padding-bottom-md;
+
 	input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), select, textarea{
 		@extend .form-control;
+
+		&[type="number"]{
+			width:60px;
+		}
+
 	}
+
+	a.remove{
+		vertical-align: top;
+		height: 20px;
+		width: 20px;
+		padding: 1px 0 0 1px;
+		font-size: 15px;
+	}
+
+	// Buttons
+	#respond input#submit, 
+	a.button, 
+	button.button, 
+	input.button{
+
+		&.alt{
+			background-color: $button-bg;
+			color:#fff;
+
+			&:hover, &:active{
+				background-color:$button-hover-bg;
+				color:$button-hover-color;
+			}
+
+			&:disabled{
+				background:$button-disabled-bg;
+			}	
+		}
+	}
+
+}
+
+#add_payment_method table.cart td.actions .coupon .input-text,
+.woocommerce-cart table.cart td.actions .coupon .input-text, 
+.woocommerce-checkout table.cart td.actions .coupon .input-text {
+    min-width: 100px;
+}
+
+#add_payment_method table.cart input, 
+.woocommerce-cart table.cart input, 
+.woocommerce-checkout table.cart input {
+	line-height: inherit;
+}
+
+.wc-proceed-to-checkout{
+	text-align:right;
 }
 
 .woocommerce-order-received{
@@ -16,3 +70,4 @@
 	}
 
 }
+

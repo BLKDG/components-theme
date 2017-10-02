@@ -13,7 +13,6 @@ function renderComponent($component, $component_name = false, $DATA = false){
         wp_enqueue_script( $component . '-script', $enqueue_path, array(), false, true );
     }	
 
-
     //Get Component View
 	if($component_name){
 		$component_view = '/components/'.$component.'/'.$component.'-'.$component_name.'.php';

@@ -18,7 +18,10 @@ get_header();
 		// $object->foo = 'bar';
 		
 		// renderComponent('component-name', 'sub-component', $object);
+		
 		?>
+
+		<?php the_content(); ?>
 
 	<?php endwhile;
 
