@@ -6,8 +6,8 @@
  */
 function renderComponent($component, $component_name = false, $DATA = false){
 
-	$file_check = get_stylesheet_directory() . '/components/$component/$component.min.js';
-	$enqueue_path = get_template_directory_uri() . '/components/$component/$component.min.js?v='.VERSION;
+	$file_check = get_stylesheet_directory() . '/components/'.$component.'/'.$component.'.min.js';
+	$enqueue_path = get_template_directory_uri() . '/components/'.$component.'/'.$component.'.min.js?v='.CACHE_BUST;
 	
 	if ( file_exists( $file_check ) ) {
         wp_enqueue_script( $component . '-script', $enqueue_path, array(), false, true );
