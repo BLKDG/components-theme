@@ -32,7 +32,7 @@ In order to take advantage of the system we'll want to think about our files a l
 
 ### 1. The Includes Folder
 
-The includes folder contains most of our system code & (as we like to refer to them) models. Outside of what is already set up (enqueue scripts, theme cleanup & support), we can also add our Classes & Methods (functions) to handle more custom/complicated calls to the database. Be sure to add any file you create in the includes folder to the functions.php file.
+The includes folder contains most of our system, ajax, models, etc. code. Outside of what is already set up (enqueue scripts, theme cleanup & support), we can also add our Classes & Methods (functions) to handle more custom/complicated calls to the database. Be sure to add any file you create in the includes folder to the functions.php file.
 
 
 ### 2. Template Files
