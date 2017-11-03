@@ -1,5 +1,5 @@
 # The Components Theme
-By BLKDG
+By [BLKDG](https://www.blkdg.com)
 
 The Components Theme is a Wordpress theme that utilizes Component Based Development (CBD) practices. Following some simple guidelines, the theme is set up to separate out component views from the templates, allowing developers to treat components as truly reusable views.
 
@@ -15,7 +15,7 @@ Run the following commands from your terminal.
 
 ## The Toolkit
 
-We've found what works for us at BLKDG and have continually added to the arsenal. The general thought is that the NPM packages are only used locally during the dev process and are in the gitignore file. The bower packages are plugins and other tools that we utilize everywhere, so those get shipped with the production code and are included in `assets/vendor`. Below is the list of bower packages. Not all packages are enqueued, but its nice to know they are there. You can see the list of enqueued javascript plugins in `includes/enqueue-scripts.php`.
+We've found what works for us at [BLKDG](https://www.blkdg.com) and have continually added to the arsenal. The general thought is that the NPM packages are only used locally during the dev process and are in the gitignore file. The bower packages are plugins and other tools that we utilize everywhere, so those get shipped with the production code and are included in `assets/vendor`. Below is the list of bower packages. Not all packages are enqueued, but its nice to know they are there. You can see the list of enqueued javascript plugins in `includes/enqueue-scripts.php`.
 
 * Bootstrap Sass (We'll be updating to Bootstrap 4.0 when its ready for production)
 * Font Awesome
