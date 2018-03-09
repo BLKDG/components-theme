@@ -4,60 +4,45 @@
 *  
 ******/
 
-// Core variables and mixins
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+/**
+ * Bootstrap
+ */
+@import "../vendor/bootstrap/scss/functions";
+@import "../vendor/bootstrap/scss/variables";
+@import "../vendor/bootstrap/scss/mixins";
+@import "../vendor/bootstrap/scss/root";
+@import "../vendor/bootstrap/scss/reboot";
+@import "../vendor/bootstrap/scss/type";
+@import "../vendor/bootstrap/scss/images";
+@import "../vendor/bootstrap/scss/code";
+@import "../vendor/bootstrap/scss/grid";
+@import "../vendor/bootstrap/scss/tables";
+@import "../vendor/bootstrap/scss/forms";
+@import "../vendor/bootstrap/scss/buttons";
 
-// Customize Variables
-@import 'helpers/variables';
-
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
-
-// Reset and dependencies
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/normalize';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/print';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons';
-
-// Core CSS
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/type';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/code';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/grid';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/tables';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/forms';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/buttons';
-
-// Components
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/component-animations';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/button-groups';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/input-groups';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/navs';
-// @import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/navbar';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/pagination';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/pager';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/labels';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/badges';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/alerts';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/media';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/list-group';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/panels';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/wells';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/close';
-
-// Components w/ JavaScript
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/modals';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/tooltip';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/popovers';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/carousel';
-
-// Utility classes
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/utilities';
-@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities';
+// @import "../vendor/bootstrap/scss/transitions";
+// @import "../vendor/bootstrap/scss/dropdown";
+// @import "../vendor/bootstrap/scss/button-group";
+// @import "../vendor/bootstrap/scss/input-group";
+// @import "../vendor/bootstrap/scss/custom-forms";
+// @import "../vendor/bootstrap/scss/nav";
+// @import "../vendor/bootstrap/scss/navbar";
+// @import "../vendor/bootstrap/scss/card";
+// @import "../vendor/bootstrap/scss/breadcrumb";
+// @import "../vendor/bootstrap/scss/pagination";
+// @import "../vendor/bootstrap/scss/badge";
+// @import "../vendor/bootstrap/scss/jumbotron";
+// @import "../vendor/bootstrap/scss/alert";
+// @import "../vendor/bootstrap/scss/progress";
+// @import "../vendor/bootstrap/scss/media";
+// @import "../vendor/bootstrap/scss/list-group";
+// @import "../vendor/bootstrap/scss/close";
+// @import "../vendor/bootstrap/scss/modal";
+// @import "../vendor/bootstrap/scss/tooltip";
+// @import "../vendor/bootstrap/scss/popover";
+// @import "../vendor/bootstrap/scss/carousel";
+// @import "../vendor/bootstrap/scss/utilities";
+// @import "../vendor/bootstrap/scss/print";
 
 /**
  * Wordpress Core
@@ -72,8 +57,7 @@
 /**
  * Typography
  */
-$fa-font-path: '../vendor/components-font-awesome/fonts';
-@import '../vendor/components-font-awesome/scss/font-awesome';
+
 @import 'helpers/typography';
 
 /**
@@ -109,3 +93,7 @@ $fa-font-path: '../vendor/components-font-awesome/fonts';
 @import '../../components/woocommerce/woocommerce-standard-styles';
 /* endinject */
 
+/**
+ * Check your work asshat
+ */
+@import 'helpers/dev';

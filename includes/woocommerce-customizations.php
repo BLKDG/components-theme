@@ -1,4 +1,4 @@
-<?php
+	<?php
 /**
  * Add some containers to our Woocommerce content
  */

@@ -6,10 +6,9 @@
   ],
   "ignore": [],
   "dependencies": {
-    "bootstrap-sass": "^3.3.6",
-    "slick-carousel": "^1.6.0",
+    "boostrap": "^4.0.0",
     "js-cookie": "^2.1.2",
-    "components-font-awesome": "*",
-    "gsap": "^1.19.0"
+    "slick-carousel": "^1.6.0",
+    "font-awesome": "^5.0.8"
   }
 }
