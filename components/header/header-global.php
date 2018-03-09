@@ -1,30 +1,32 @@
-<?php if ( has_nav_menu( 'utility' )) : ?>
+<header>
+	<?php if ( has_nav_menu( 'utility' )) : ?>
 
-	<nav class="utility-desktop clearfix">
+		<nav class="utility-desktop clearfix">
 
-		<?php
-			wp_nav_menu( array(
-				'theme_location' 	=> 'utility',
-				'menu_class'     	=> 'utility-menu'
-			 ) );
-		?>
+			<?php
+				wp_nav_menu( array(
+					'theme_location' 	=> 'utility',
+					'menu_class'     	=> 'utility-menu'
+				 ) );
+			?>
 
-	</nav>
+		</nav>
 
-<?php endif; ?>
+	<?php endif; ?>
 
-<div class="container-fluid">
-	<div class="row">
-		<header class="col-xs-12 clearfix">
-			
-			<div class="branding">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 clearfix">
+				
+				<div class="branding">
 
-				<h1 class="title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class="title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+				</div>
+
+				<?php renderComponent('header', 'navigation' ); ?>
 
 			</div>
-
-			<?php renderComponent('header', 'navigation' ); ?>
-
-		</header>
+		</div>
 	</div>
-</div>
+</header>
