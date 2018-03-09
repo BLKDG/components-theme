@@ -12,12 +12,12 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-// $gray-base:              #000;
+ $gray-base:              #000;
 // $gray-darker:            lighten($gray-base, 13.5%); // #222
 // $gray-dark:              lighten($gray-base, 20%);   // #333
-// $gray:                   lighten($gray-base, 33.5%); // #555
+ $gray:                   lighten($gray-base, 33.5%); // #555
 // $gray-light:             lighten($gray-base, 46.7%); // #777
-// $gray-lighter:           lighten($gray-base, 93.5%); // #eee
+ $gray-lighter:           lighten($gray-base, 93.5%); // #eee
 
 $brand-primary:         #002d73; // #337ab7
 // $brand-success:         #5cb85c;
@@ -41,6 +41,13 @@ $link-color:            $brand-primary;
 $link-hover-color:      darken($link-color, 15%);
 //** Link hover decoration.
 $link-hover-decoration: none;
+
+// breakpoints
+$sm-width: 576px;
+$md-width: 768px;
+$lg-width: 992px;
+$xl-width: 1200px;
+
 
 
 //== Typography

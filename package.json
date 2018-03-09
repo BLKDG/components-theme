@@ -59,7 +59,5 @@
     "vinyl-paths": "^2.1.0",
     "yargs": "^3.31.0"
   },
-  "dependencies": {
-    
-  }
+  "dependencies": {}
 }
