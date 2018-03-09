@@ -4,50 +4,48 @@
 *  
 ******/
 
-/**
- * Bootstrap
- */
-@import "../vendor/bootstrap/scss/functions";
-@import "../vendor/bootstrap/scss/variables";
-@import "../vendor/bootstrap/scss/mixins";
-@import "../vendor/bootstrap/scss/root";
-@import "../vendor/bootstrap/scss/reboot";
-@import "../vendor/bootstrap/scss/type";
-@import "../vendor/bootstrap/scss/images";
-@import "../vendor/bootstrap/scss/code";
-@import "../vendor/bootstrap/scss/grid";
-@import "../vendor/bootstrap/scss/tables";
-@import "../vendor/bootstrap/scss/forms";
-@import "../vendor/bootstrap/scss/buttons";
 
-// @import "../vendor/bootstrap/scss/transitions";
-// @import "../vendor/bootstrap/scss/dropdown";
-// @import "../vendor/bootstrap/scss/button-group";
-// @import "../vendor/bootstrap/scss/input-group";
-// @import "../vendor/bootstrap/scss/custom-forms";
-// @import "../vendor/bootstrap/scss/nav";
-// @import "../vendor/bootstrap/scss/navbar";
-// @import "../vendor/bootstrap/scss/card";
-// @import "../vendor/bootstrap/scss/breadcrumb";
-// @import "../vendor/bootstrap/scss/pagination";
-// @import "../vendor/bootstrap/scss/badge";
-// @import "../vendor/bootstrap/scss/jumbotron";
-// @import "../vendor/bootstrap/scss/alert";
-// @import "../vendor/bootstrap/scss/progress";
-// @import "../vendor/bootstrap/scss/media";
-// @import "../vendor/bootstrap/scss/list-group";
-// @import "../vendor/bootstrap/scss/close";
-// @import "../vendor/bootstrap/scss/modal";
-// @import "../vendor/bootstrap/scss/tooltip";
-// @import "../vendor/bootstrap/scss/popover";
-// @import "../vendor/bootstrap/scss/carousel";
-// @import "../vendor/bootstrap/scss/utilities";
-// @import "../vendor/bootstrap/scss/print";
+@import '../vendor/boostrap/scss/functions';
+@import '../vendor/boostrap/scss/variables';
+@import '../vendor/boostrap/scss/mixins';
+@import '../vendor/boostrap/scss/root';
+@import '../vendor/boostrap/scss/reboot';
+@import '../vendor/boostrap/scss/type';
+@import '../vendor/boostrap/scss/images';
+@import '../vendor/boostrap/scss/code';
+@import '../vendor/boostrap/scss/grid';
+@import '../vendor/boostrap/scss/tables';
+@import '../vendor/boostrap/scss/forms';
+@import '../vendor/boostrap/scss/buttons';
+@import '../vendor/boostrap/scss/transitions';
+@import '../vendor/boostrap/scss/dropdown';
+@import '../vendor/boostrap/scss/button-group';
+@import '../vendor/boostrap/scss/input-group';
+@import '../vendor/boostrap/scss/custom-forms';
+
+// @import '../vendor/boostrap/scss/nav';
+// @import '../vendor/boostrap/scss/navbar';
+// @import '../vendor/boostrap/scss/card';
+// @import '../vendor/boostrap/scss/breadcrumb';
+// @import '../vendor/boostrap/scss/pagination';
+// @import '../vendor/boostrap/scss/badge';
+// @import '../vendor/boostrap/scss/jumbotron';
+// @import '../vendor/boostrap/scss/alert';
+// @import '../vendor/boostrap/scss/progress';
+// @import '../vendor/boostrap/scss/media';
+// @import '../vendor/boostrap/scss/list-group';
+// @import '../vendor/boostrap/scss/close';
+// @import '../vendor/boostrap/scss/modal';
+// @import '../vendor/boostrap/scss/tooltip';
+// @import '../vendor/boostrap/scss/popover';
+// @import '../vendor/boostrap/scss/carousel';
+// @import '../vendor/boostrap/scss/utilities';
+// @import '../vendor/boostrap/scss/print';
 
 /**
  * Wordpress Core
  */
-@import 'helpers/wordpress-core.scss';
+@import 'helpers/wordpress-core';
 
 /**
  * Slick Slider
@@ -61,7 +59,7 @@
 /**
  * Typography
  */
-
+@import '../vendor/font-awesome/web-fonts-with-css/scss/fontawesome.scss';
 @import 'helpers/typography';
 
 /**
@@ -96,8 +94,3 @@
 @import '../../components/post/post';
 @import '../../components/woocommerce/woocommerce-standard-styles';
 /* endinject */
-
-/**
- * Check your work asshat
- */
-@import 'helpers/dev';
