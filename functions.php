@@ -32,4 +32,7 @@ include_once('includes/enqueue-scripts.php');
 // Customize the Divi Plugin (if installed)
 //include_once('includes/woocommerce-customizations.php');
 
+// Enqueue Scripts
+include_once('includes/content.php');
+
 ?>
