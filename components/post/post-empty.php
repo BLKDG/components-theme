@@ -5,7 +5,7 @@
 ?>
 <main class="container">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-12">
 
 			<h1>Nothing to see here.</h1>
 			<p><a href="/">Go Home >></a></p>
