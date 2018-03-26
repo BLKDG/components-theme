@@ -1,0 +1,38 @@
+.anim-container{
+	overflow:hidden;
+}
+
+.anim-left{
+	transition: all .8s cubic-bezier(.165,.84,.44,1);
+	opacity: 0;
+	transform: translateX(20px);
+
+	@media(min-width:768px){
+		transform: translateX(80px);
+	}
+}
+
+.anim-right{
+	transition: all .8s cubic-bezier(.165,.84,.44,1);
+	opacity: 0;
+	transform: translateX(-20px);
+
+	@media(min-width:768px){
+		transform: translateX(-80px);
+	}
+}
+
+.anim-up{
+	transition: all .8s cubic-bezier(.165,.84,.44,1);
+	opacity: 0;
+	transform: translateY(20px);
+
+	@media(min-width:768px){
+		transform: translateY(80px);
+	}
+}
+
+.anim-complete{
+	transform: translate(0, 0);
+	opacity:1;
+}

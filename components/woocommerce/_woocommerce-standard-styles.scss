@@ -1,6 +1,4 @@
 .woocommerce{ 
-	@extend .padding-top-md;
-	@extend .padding-bottom-md;
 
 	input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), select, textarea{
 		@extend .form-control;

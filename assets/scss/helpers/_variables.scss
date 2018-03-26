@@ -1,0 +1,16 @@
+// Colors
+$deep-blue: 		#0B0042;
+$gray: 				#eeeeee;
+
+$brand-primary:        $deep-blue;
+
+// breakpoints
+$sm-width: 480px;
+$md-width: 768px;
+$lg-width: 1025px;
+
+
+//** Global textual link color.
+$link-color:            $brand-primary;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%);

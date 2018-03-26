@@ -12,14 +12,14 @@ $button-disabled-bg:#eee;
 
 .btn{
 	background-color: $button-bg;
-	color:#fff;
+	color: #fff;
 
 	&:hover, &:active{
-		background-color:$button-hover-bg;
-		color:$button-hover-color;
+		background-color: $button-hover-bg;
+		color: $button-hover-color;
 	}
 
 	&:disabled{
-		background:$button-disabled-bg;
+		background: $button-disabled-bg;
 	}
 }

@@ -56,10 +56,18 @@
 */
 @import 'helpers/variables';
 
+/***
+* Mixins
+***/
+@import 'helpers/mixins';
+
 /**
  * Typography
  */
 @import '../vendor/font-awesome/web-fonts-with-css/scss/fontawesome.scss';
+@import '../vendor/font-awesome/web-fonts-with-css/scss/fa-solid.scss';
+@import '../vendor/font-awesome/web-fonts-with-css/scss/fa-regular.scss';
+@import '../vendor/font-awesome/web-fonts-with-css/scss/fa-brands.scss';
 @import 'helpers/typography';
 
 /**
@@ -71,11 +79,6 @@
  * Functions
  */
 @import 'helpers/functions';
-
-/***
-* Mixins
-***/
-@import 'helpers/mixins';
 
 /***
 * Partials

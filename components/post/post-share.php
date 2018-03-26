@@ -9,8 +9,8 @@ $linked_in = "https://www.linkedin.com/shareArticle?mini=true&url=" . urlencode(
 
 <div class="share-links">
     <div class="social-links">
-        <a target="_blank" href="<?php echo $twitter; ?>" title="Twitter" onclick="window.open('<?php echo $twitter; ?>', 'newwindow', 'width=400,height=250'); return false;"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a target="_blank" href="<?php echo $facebook; ?>" title="Facebook" onclick="window.open('<?php echo $facebook; ?>', 'newwindow', 'width=400,height=250'); return false;"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a target="_blank" href="<?php echo $linked_in ?>" title="LinkedIn" onclick="window.open('<?php echo $linked_in; ?>', 'newwindow', 'width=400,height=250'); return false;"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a target="_blank" href="<?php echo $twitter; ?>" title="Twitter" onclick="window.open('<?php echo $twitter; ?>', 'newwindow', 'width=400,height=250'); return false;"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a target="_blank" href="<?php echo $facebook; ?>" title="Facebook" onclick="window.open('<?php echo $facebook; ?>', 'newwindow', 'width=400,height=250'); return false;"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a target="_blank" href="<?php echo $linked_in ?>" title="LinkedIn" onclick="window.open('<?php echo $linked_in; ?>', 'newwindow', 'width=400,height=250'); return false;"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
     </div>
 </div>

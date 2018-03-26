@@ -1,7 +1,5 @@
 jQuery(document).ready(function($) {
 
-    console.log('run it!');
-
     tinymce.create('tinymce.plugins.components_theme_plugin', {
         init : function(ed, url) {
                 // Register command for when button is clicked
