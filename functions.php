@@ -36,7 +36,7 @@ function get_the_content_formatted() {
 	return $content;
 }
 
-function renderComponent() {
+function renderComponent($component, $component_name = false, $DATA = false) {
 	$file_check = get_stylesheet_directory() . '/components/'.$component.'/'.$component.'.min.js';
 	$enqueue_path = get_template_directory_uri() . '/components/'.$component.'/'.$component.'.min.js?v='.CACHE_BUST;
 
@@ -56,3 +56,4 @@ function renderComponent() {
 	// Just making phpmd happy :(
 	unset($DATA);
 }
+
