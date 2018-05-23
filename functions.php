@@ -21,13 +21,13 @@ if (file_exists($root_dir . '/.env')) {
     $dotenv->load();
 }
 
-BLKDG\Environment::init();
-BLKDG\Cleanup::init();
-BLKDG\ThemeSupport::init();
-BLKDG\Widgets::init();
-BLKDG\Scripts::init();
+Setup\Environment::init();
+Setup\Cleanup::init();
+Setup\ThemeSupport::init();
+Setup\Widgets::init();
+Setup\Scripts::init();
 
-BLKDG\PostTypes\Event::register();
+Components\Event\PostType::register();
 
 function get_the_content_formatted() {
 	$content = get_the_content();
@@ -35,25 +35,3 @@ function get_the_content_formatted() {
 	$content = str_replace(']]>', ']]&gt;', $content);
 	return $content;
 }
-
-function renderComponent($component, $component_name = false, $DATA = false) {
-	$file_check = get_stylesheet_directory() . '/components/'.$component.'/'.$component.'.min.js';
-	$enqueue_path = get_template_directory_uri() . '/components/'.$component.'/'.$component.'.min.js?v='.CACHE_BUST;
-
-	if ( file_exists( $file_check ) ) {
-		wp_enqueue_script( $component . '-script', $enqueue_path, array(), false, true );
-	}
-
-	//Get Component View
-	if($component_name){
-		$component_view = '/components/'.$component.'/'.$component.'-'.$component_name.'.php';
-	}else{
-		$component_view = '/components/'.$component.'/'.$component.'.php';
-	}
-
-	include get_template_directory() . $component_view;
-
-	// Just making phpmd happy :(
-	unset($DATA);
-}
-

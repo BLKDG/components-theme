@@ -1,8 +1,8 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 	
-	<?php renderComponent('head'); ?>
+	<?php Components\Head\View::render('head'); ?>
 	
 	<body <?php body_class(); ?>>
 
-		<?php renderComponent('header', 'global'); ?>
+		<?php Components\Header\View::render('global'); ?>

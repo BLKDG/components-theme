@@ -1,7 +1,7 @@
 <?php
-namespace BLKDG\PostTypes;
+namespace Components\Event;
 
-class Event
+class PostType
 {
     /**
      * Registers Event Post Type

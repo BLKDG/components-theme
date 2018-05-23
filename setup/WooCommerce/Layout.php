@@ -1,5 +1,5 @@
 <?php
-namespace BLKDG\WooCommerce;
+namespace Setup\WooCommerce;
 
 class Layout
 {

@@ -6,7 +6,8 @@
     },
     "autoload": {
         "psr-4": {
-         "BLKDG\\": "src"
+         "Setup\\": "setup",
+         "Components\\": "components"
         }
     }
 }

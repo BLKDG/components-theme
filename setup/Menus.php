@@ -1,5 +1,5 @@
 <?php
-namespace BLKDG;
+namespace Setup;
 
 class Menus
 {

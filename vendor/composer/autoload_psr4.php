@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Setup\\' => array($baseDir . '/setup'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
-    'BLKDG\\' => array($baseDir . '/src'),
+    'Components\\' => array($baseDir . '/components'),
 );
