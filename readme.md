@@ -39,7 +39,7 @@ The includes folder contains most of our system, ajax, models, etc. code. Outsid
 
 This includes everything from our top level files (`single.php`, `index.php`, `page.php`, `front-page.php`, `archive.php`, etc.) to the files we create in our `/templates` directory. This is where we begin treating the files a little differently.
 
-In taking some queues from the MVC model, we're now treating high level template files as a 'Controller' of sorts. With strict practice/implementation, you should not have any html in these files. They are simply there to pass data to & call the appropriate components. Utilization of a routing function called `renderComponent()`, we can call the components similarly to the WP Core function get_template_part(), but with the addition of passing in custom data if needed. An example of this may look like the following:
+In taking some queues from the MVC model, we're now treating high level template files as a 'Controller' of sorts. With strict practice/implementation, you should not have any html in these files. They are simply there to pass data to & call the appropriate components. Utilization of a routing method within our `Components\View` class called `Components\View::render()`, we can call the components similarly to the WP Core function get_template_part(), but with the addition of passing in custom data if needed. An example of this may look like the following:
 
 ```
 <?php get_header();
@@ -55,7 +55,7 @@ In taking some queues from the MVC model, we're now treating high level template
 			$object->image = get_the_post_thumbnail_url();
 		
 			// Render the component and include our data object
-			renderComponent('section', 'title', $object);
+			Components\View::render('section', 'title', $object);
 		?>
 
 	<?php endwhile;
