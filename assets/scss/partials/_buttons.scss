@@ -11,13 +11,9 @@ $button-hover-color:#fff;
 $button-disabled-bg:#eee;
 
 .btn{
-	background-color: $button-bg;
-	color: #fff;
-
-	&:hover, &:active{
-		background-color: $button-hover-bg;
-		color: $button-hover-color;
-	}
+	// Parameters
+  	// $background (required), $border (required), $hover-background, $hover-border
+  	@include button-variant(theme-color('primary'), theme-color('secondary'));
 
 	&:disabled{
 		background: $button-disabled-bg;

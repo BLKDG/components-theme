@@ -7,7 +7,7 @@
 	opacity: 0;
 	transform: translateX(20px);
 
-	@media(min-width:768px){
+	@include media-breakpoint-up(md){
 		transform: translateX(80px);
 	}
 }
@@ -17,7 +17,7 @@
 	opacity: 0;
 	transform: translateX(-20px);
 
-	@media(min-width:768px){
+	@include media-breakpoint-up(md){
 		transform: translateX(-80px);
 	}
 }
@@ -27,7 +27,7 @@
 	opacity: 0;
 	transform: translateY(20px);
 
-	@media(min-width:768px){
+	@include media-breakpoint-up(md){
 		transform: translateY(80px);
 	}
 }

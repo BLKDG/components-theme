@@ -1,0 +1,7 @@
+.slick-slider {
+	.slick-slide {
+		&:focus {
+			outline: 0;
+		}
+	}
+}
