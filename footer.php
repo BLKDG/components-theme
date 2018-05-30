@@ -1,7 +1,7 @@
 		<footer>
 		
-			<?php Components\Footer\View::render( 'nav' ); ?>
-			<?php Components\Footer\View::render( 'legal' ); ?>
+			<?php Components\View::render('footer','nav'); ?>
+			<?php Components\View::render('footer','legal'); ?>
 		
 		</footer>
 

@@ -4,7 +4,7 @@
 		<div class="col-sm-8">
 			<?php 
 			
-			renderComponent('post', get_post_format()); 
+			Components\View::render('post', get_post_format()); 
 			
 			the_post_navigation();
 

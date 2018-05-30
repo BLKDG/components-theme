@@ -24,7 +24,7 @@
 
 				</div>
 
-				<?php Components\Header\View::render( 'navigation' ); ?>
+				<?php Components\View::render( 'header', 'navigation' ); ?>
 
 			</div>
 		</div>

@@ -17,7 +17,7 @@ get_header();
 		// $object = new StdClass;
 		// $object->foo = 'bar';
 		
-		// renderComponent('component-name', 'sub-component', $object);
+		// Components\View::render('component-name', 'sub-component', $object);
 		
 		?>
 
