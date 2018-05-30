@@ -4,7 +4,7 @@
 
 			<?php while ( have_posts() ) : the_post();
 
-				renderComponent('post', get_post_format() );
+				Components\View::render('post', get_post_format() );
 
 			endwhile; ?>
 
@@ -18,7 +18,7 @@
 		</div>
 		<div class="col-sm-4">
 
-			<?php renderComponent('widget', 'sidebar-1'); ?>
+			<?php Components\View::render('widget', 'sidebar-1'); ?>
 
 		</div>
 	</div>
