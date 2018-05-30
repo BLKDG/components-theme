@@ -6,28 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Components\\ComponentView' => $baseDir . '/components/ComponentView.php',
-    'Components\\Event\\PostType' => $baseDir . '/components/Event/PostType.php',
-    'Components\\Event\\View' => $baseDir . '/components/Event/View.php',
-    'Components\\Footer\\View' => $baseDir . '/components/Footer/View.php',
-    'Components\\Head\\View' => $baseDir . '/components/Head/View.php',
-    'Components\\Header\\View' => $baseDir . '/components/Header/View.php',
-    'Components\\Post\\View' => $baseDir . '/components/Post/View.php',
-    'Dotenv\\Dotenv' => $vendorDir . '/vlucas/phpdotenv/src/Dotenv.php',
-    'Dotenv\\Exception\\ExceptionInterface' => $vendorDir . '/vlucas/phpdotenv/src/Exception/ExceptionInterface.php',
-    'Dotenv\\Exception\\InvalidCallbackException' => $vendorDir . '/vlucas/phpdotenv/src/Exception/InvalidCallbackException.php',
-    'Dotenv\\Exception\\InvalidFileException' => $vendorDir . '/vlucas/phpdotenv/src/Exception/InvalidFileException.php',
-    'Dotenv\\Exception\\InvalidPathException' => $vendorDir . '/vlucas/phpdotenv/src/Exception/InvalidPathException.php',
-    'Dotenv\\Exception\\ValidationException' => $vendorDir . '/vlucas/phpdotenv/src/Exception/ValidationException.php',
-    'Dotenv\\Loader' => $vendorDir . '/vlucas/phpdotenv/src/Loader.php',
-    'Dotenv\\Validator' => $vendorDir . '/vlucas/phpdotenv/src/Validator.php',
-    'Setup\\ACF' => $baseDir . '/setup/ACF.php',
-    'Setup\\Cleanup' => $baseDir . '/setup/Cleanup.php',
-    'Setup\\Environment' => $baseDir . '/setup/Environment.php',
-    'Setup\\Menus' => $baseDir . '/setup/Menus.php',
-    'Setup\\PostTypes\\Event' => $baseDir . '/setup/PostTypes/Event.php',
-    'Setup\\Scripts' => $baseDir . '/setup/Scripts.php',
-    'Setup\\ThemeSupport' => $baseDir . '/setup/ThemeSupport.php',
-    'Setup\\Widgets' => $baseDir . '/setup/Widgets.php',
-    'Setup\\WooCommerce\\Layout' => $baseDir . '/setup/WooCommerce/Layout.php',
 );

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2150fa8ab06bfd2d32ac19e6e34faffa
+class ComposerStaticInita8eedc63f58aeb1bce41cf7308eeea96
 {
     public static $prefixLengthsPsr4 = array (
         'S' => 
@@ -36,39 +36,11 @@ class ComposerStaticInit2150fa8ab06bfd2d32ac19e6e34faffa
         ),
     );
 
-    public static $classMap = array (
-        'Components\\ComponentView' => __DIR__ . '/../..' . '/components/ComponentView.php',
-        'Components\\Event\\PostType' => __DIR__ . '/../..' . '/components/Event/PostType.php',
-        'Components\\Event\\View' => __DIR__ . '/../..' . '/components/Event/View.php',
-        'Components\\Footer\\View' => __DIR__ . '/../..' . '/components/Footer/View.php',
-        'Components\\Head\\View' => __DIR__ . '/../..' . '/components/Head/View.php',
-        'Components\\Header\\View' => __DIR__ . '/../..' . '/components/Header/View.php',
-        'Components\\Post\\View' => __DIR__ . '/../..' . '/components/Post/View.php',
-        'Dotenv\\Dotenv' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Dotenv.php',
-        'Dotenv\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ExceptionInterface.php',
-        'Dotenv\\Exception\\InvalidCallbackException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/InvalidCallbackException.php',
-        'Dotenv\\Exception\\InvalidFileException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/InvalidFileException.php',
-        'Dotenv\\Exception\\InvalidPathException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/InvalidPathException.php',
-        'Dotenv\\Exception\\ValidationException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ValidationException.php',
-        'Dotenv\\Loader' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Loader.php',
-        'Dotenv\\Validator' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Validator.php',
-        'Setup\\ACF' => __DIR__ . '/../..' . '/setup/ACF.php',
-        'Setup\\Cleanup' => __DIR__ . '/../..' . '/setup/Cleanup.php',
-        'Setup\\Environment' => __DIR__ . '/../..' . '/setup/Environment.php',
-        'Setup\\Menus' => __DIR__ . '/../..' . '/setup/Menus.php',
-        'Setup\\PostTypes\\Event' => __DIR__ . '/../..' . '/setup/PostTypes/Event.php',
-        'Setup\\Scripts' => __DIR__ . '/../..' . '/setup/Scripts.php',
-        'Setup\\ThemeSupport' => __DIR__ . '/../..' . '/setup/ThemeSupport.php',
-        'Setup\\Widgets' => __DIR__ . '/../..' . '/setup/Widgets.php',
-        'Setup\\WooCommerce\\Layout' => __DIR__ . '/../..' . '/setup/WooCommerce/Layout.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2150fa8ab06bfd2d32ac19e6e34faffa::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2150fa8ab06bfd2d32ac19e6e34faffa::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit2150fa8ab06bfd2d32ac19e6e34faffa::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita8eedc63f58aeb1bce41cf7308eeea96::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita8eedc63f58aeb1bce41cf7308eeea96::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
