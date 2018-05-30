@@ -1,15 +1,9 @@
 <?php
 
 /**
- *
- * Set up the theme and provides some helper functions, which are used in the theme as custom template tags. Others are attached to action and filter hooks in WordPress to change core functionality.
- *
+ * Autoload Setup with Composer
  */
-
-/**
- * Autoload BLKDG and our dependencies with Composer
- */
-include_once('vendor/autoload.php');
+include_once(__DIR__.'/vendor/autoload.php');
 
 /**
  * Load our environment variables from .env file
@@ -26,8 +20,6 @@ Setup\Cleanup::init();
 Setup\ThemeSupport::init();
 Setup\Widgets::init();
 Setup\Scripts::init();
-
-Components\Event\PostType::register();
 
 function get_the_content_formatted() {
 	$content = get_the_content();
