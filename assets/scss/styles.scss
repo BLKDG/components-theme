@@ -4,6 +4,10 @@
 *  
 ******/
 
+/*
+* Variables
+*/
+@import 'common/variables';
 
 @import '../vendor/boostrap/scss/functions';
 @import '../vendor/boostrap/scss/variables';
@@ -45,21 +49,12 @@
 /**
  * Wordpress Core
  */
-@import 'helpers/wordpress-core';
+@import 'common/wordpress-core';
 
 /**
  * Slick Slider
  */
 @import '../vendor/slick-carousel/slick/slick.scss';
-/*
-* Variables
-*/
-@import 'helpers/variables';
-
-/***
-* Mixins
-***/
-@import 'helpers/mixins';
 
 /**
  * Typography
@@ -68,17 +63,17 @@
 @import '../vendor/font-awesome/web-fonts-with-css/scss/fa-solid.scss';
 @import '../vendor/font-awesome/web-fonts-with-css/scss/fa-regular.scss';
 @import '../vendor/font-awesome/web-fonts-with-css/scss/fa-brands.scss';
-@import 'helpers/typography';
+@import 'common/typography';
 
 /**
  * Global
  */
-@import 'helpers/global';
+@import 'common/global';
 
 /**
  * Functions
  */
-@import 'helpers/functions';
+@import 'common/functions';
 
 /***
 * Partials
@@ -91,6 +86,7 @@
  */
 // Component styles are injected through gulp
 /* inject:scss */
+@import '../../components/event/event';
 @import '../../components/footer/footer';
 @import '../../components/header/header';
 @import '../../components/post/post';

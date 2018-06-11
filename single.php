@@ -7,7 +7,7 @@ get_header();
 	
 	while ( have_posts() ) : the_post();
 
-		renderComponent('post', 'container' );
+		Components\View::render('post', 'container' );
 
 	endwhile;
 	

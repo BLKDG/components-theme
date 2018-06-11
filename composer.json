@@ -1,0 +1,13 @@
+{
+    "name": "blkdg/components-theme",
+    "description": "WordPress theme based upon component-based development practices.",
+    "require": {
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+         "Setup\\": "setup",
+         "Components\\": "components"
+        }
+    }
+}

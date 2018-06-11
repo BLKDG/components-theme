@@ -1,38 +1,29 @@
 <?php
+
 /**
- * 
- * Set up the theme and provides some helper functions, which are used in the theme as custom template tags. Others are attached to action and filter hooks in WordPress to change core functionality.
- * 
+ * Autoload Setup with Composer
  */
+include_once(__DIR__.'/vendor/autoload.php');
 
-// Environment Variables
-include_once('includes/env.php');
+/**
+ * Load our environment variables from .env file
+ * Using the .env file prevents us from committing private keys to the repository
+ */
+$root_dir = dirname(__FILE__);
+$dotenv = new Dotenv\Dotenv($root_dir);
+if (file_exists($root_dir . '/.env')) {
+    $dotenv->load();
+}
 
-// Cleanup Wordpress defaults
-include_once('includes/cleanup.php');
+Setup\Environment::init();
+Setup\Cleanup::init();
+Setup\ThemeSupport::init();
+Setup\Widgets::init();
+Setup\Scripts::init();
 
-// Add theme support
-include_once('includes/theme-support.php');
-
-// Add widget support
-include_once('includes/widgets.php');
-
-// File routing helpers
-include_once('includes/routing.php');
-
-// Enqueue Scripts
-include_once('includes/enqueue-scripts.php');
-
-// Custom Post Types
-//include_once('includes/custom-post-types.php');
-
-// Advanced Custom Fields Customizations
-//include_once('includes/acf.php');
-
-// Customize the Divi Plugin (if installed)
-//include_once('includes/woocommerce-customizations.php');
-
-// Enqueue Scripts
-include_once('includes/content.php');
-
-?>
+function get_the_content_formatted() {
+	$content = get_the_content();
+	$content = apply_filters('the_content', $content);
+	$content = str_replace(']]>', ']]&gt;', $content);
+	return $content;
+}

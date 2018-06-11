@@ -7,11 +7,11 @@ get_header();
 
 	if ( have_posts() ) :
 
-		renderComponent('post', 'listing');
+		Components\View::render('post', 'listing');
 
 	else :
 		
-		renderComponent('post', 'empty' );
+		Components\View::render('post', 'empty' );
 
 	endif;
 

@@ -1,6 +1,6 @@
 .utility-desktop{
 	display: none;
-	@include md { 
+	@include media-breakpoint-up(md) { 
 		display: block;
 		background: rgba($brand-primary, 0.95);
 	}
@@ -16,7 +16,7 @@
 				padding: 10px;
 				color: #fff;
 				transition: padding 0.3s;
-				@include md {
+				@include media-breakpoint-up(md) {
 					font-size:14px;
 				}
 
@@ -43,7 +43,7 @@ header{
 
 .nav-mobile{
 	float: right;
-	@include md { 
+	@include media-breakpoint-up(md) { 
 		display: none;
 	}	
 }
@@ -152,7 +152,7 @@ header{
 
 .nav-desktop{
 	display: none;
-	@include md { 
+	@include media-breakpoint-up(md) { 
 		display: block;
 		float: right;
 	}
@@ -168,7 +168,7 @@ header{
 				margin: 0 20px;
 				color: $gray;
 				transition: padding 0.3s;
-				@include md {
+				@include media-breakpoint-up(md) {
 					font-size: 14px;
 				}
 
