@@ -20,6 +20,7 @@ Setup\Cleanup::init();
 Setup\ThemeSupport::init();
 Setup\Widgets::init();
 Setup\Scripts::init();
+Setup\Menus::init();
 
 function get_the_content_formatted() {
 	$content = get_the_content();
