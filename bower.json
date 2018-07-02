@@ -9,6 +9,6 @@
     "js-cookie": "^2.1.2",
     "slick-carousel": "^1.6.0",
     "font-awesome": "^5.0.8",
-    "boostrap": "bootstrap#^4.0.0"
+    "bootstrap": "bootstrap#^4.1"
   }
 }
