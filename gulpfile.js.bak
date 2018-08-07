@@ -4,7 +4,6 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
 var sourceUrls = require('gulp-source-url');
-var concat = require('gulp-concat');
 var fs = require('fs'); 
 var merge = require('merge-stream');
 var path = require('path');
@@ -56,56 +55,78 @@ function sass() {
         .pipe($.concat('styles.css'))
         .pipe($.autoprefixer({ browsers: ['last 2 versions', 'ie >= 9'] }))
         .pipe($.minifyCss())
-        .pipe( $.sourcemaps.write('.'))
+        .pipe( $.sourcemaps.write('.')) 
         .pipe(gulp.dest('assets/css'))
         .pipe(browserSync.stream())
 }
 
-gulp.task('scripts', ['clean:js'], jsComponents);
-
-var jsFiles = [
-    'assets/js/**/*.js',
-    'components/**/*.js'
-];
-
-function jsComponents() {
-        return gulp.src([
-            'assets/js/**/*.js',
-            'components/**/*.js'
-        ])
+gulp.task('js:globals', ['clean:js'], jsGlobals);
+function jsGlobals() {
+    return gulp.src(['assets/js/*.js'])
         .pipe($.sourcemaps.init())
-        .pipe($.concat('bundle.min.js'))
+        .pipe(sourceUrls('.')) 
         .pipe($.uglify())
+        .pipe($.rename({ suffix: '.min' }))
         .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('assets/js'))
         .pipe(browserSync.stream())
-    };
+}
+
+gulp.task('js:components', ['clean:components'], jsComponents);
+function jsComponents() {
+    var compilePublicComponents = getFolders(componentsPath).map(function(folder) {
+        return gulp.src([path.join(componentsPath, folder, '/**/*.js')])
+            .pipe($.sourcemaps.init())
+            .pipe(sourceUrls('.')) 
+            .pipe($.concat(folder + '.min.js'))
+            .pipe(gulp.dest(componentsPath + folder))
+            .pipe($.uglify())
+            .pipe($.sourcemaps.write('.'))
+            .pipe(gulp.dest(componentsPath + folder))
+            .pipe(browserSync.stream())
+    });
+
+    return compilePublicComponents;
+}
 
 
 gulp.task('clean:js', function () {
     return del(['assets/js/*.min.js','assets/js/**/*.min.js']);
 })
 
-gulp.task('default', ['sass:inject','sass', 'scripts'], function() {
+gulp.task('clean:components', function () {
+    return del(['components/**/*.min.js']);
+})
+
+gulp.task('default', ['sass:inject','sass', 'js:components', 'js:globals'], function() {
 
     browserSync.init({
         files: ['{components,templates}/**/*.php', '*.php'],
-        proxy: 'http://localhost:8080',
-        port: 8080,
+        proxy: 'blkdg-component.test',
         snippetOptions: {
           whitelist: ['/wp-admin/admin-ajax.php'],
           blacklist: ['/wp-admin/**']
         },
-      }); 
+      });
+
+    $.watch(['assets/js/*.js', '!assets/js/*.min.js'], function (v) {
+        logFileChange(v);
+        gulp.run('js:globals');
+    });
+    
+    $.watch(['components/**/*.js', '!components/**/*.min.js'], function (v) {
+        logFileChange(v);
+        gulp.run('js:components');
+    });
 
     $.watch(['components/**/*.scss', 'assets/scss/**/*.scss', '!assets/scss/styles.scss'], function (v) {
         logFileChange(v);
         gulp.run('sass:inject');
     });
 
-    $.watch(jsFiles, function (v) {
+    $.watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
         logFileChange(v);
-        gulp.run('scripts');
+        gulp.run('sass');
     });
     
 });
