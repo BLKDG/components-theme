@@ -22,6 +22,8 @@ Setup\Widgets::init();
 Setup\Scripts::init();
 Setup\Menus::init();
 
+Setup\Widgets\RelatedPosts::register();
+
 function get_the_content_formatted() {
 	$content = get_the_content();
 	$content = apply_filters('the_content', $content);
