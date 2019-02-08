@@ -7,7 +7,7 @@ class ThemeSupport
      * Initialization
      * This method should be run from functions.php
      */
-    public function init()
+    public static function init()
     {
         add_action( 'after_setup_theme', array(__CLASS__, 'add_title_tag_support') );
         add_action( 'after_setup_theme', array(__CLASS__, 'add_auto_feed_link_support') );
