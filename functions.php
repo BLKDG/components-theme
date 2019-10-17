@@ -3,8 +3,8 @@
 /**
  * Autoload Setup with Composer
  */
-include_once(__DIR__.'/vendor/autoload.php');
-
+require_once( __DIR__ . '/vendor/autoload.php' );
+$timber = new Timber\Timber();
 /**
  * Load our environment variables from .env file
  * Using the .env file prevents us from committing private keys to the repository
