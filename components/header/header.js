@@ -1,7 +1,7 @@
 ;(function ($) {
 
   $(document).ready(function(){
-
+      console.log('header.js loading to all.js');
       $('#mobile-menu').click(function(){
           $(this).toggleClass('open');
 

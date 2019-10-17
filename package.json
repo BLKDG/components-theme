@@ -16,51 +16,27 @@
   "homepage": "",
   "bugs": "",
   "license": "MIT",
-  "main": "gulpfile.js",
+  "main": "webpack.mix.js",
   "repository": {
     "type": "git",
     "url": ""
   },
-  "devDependencies": {
-    "autoprefixer": "^6.1.0",
-    "bower": "~1.6.4",
-    "browser-sync": "^2.24.4",
-    "colors": "^1.1.2",
-    "dateformat": "^1.0.12",
-    "del": "^2.2.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-flatten": "^0.2.0",
-    "gulp-if": "^2.0.0",
-    "gulp-inject": "^4.2.0",
-    "gulp-jshint": "^2.0.0",
-    "gulp-load-plugins": "^1.1.0",
-    "gulp-minify-css": "^1.2.2",
-    "gulp-notify": "^2.2.0",
-    "gulp-phpcbf": "^0.1.2",
-    "gulp-phpcs": "^2.0.0",
-    "gulp-phpmd": "^2.0.1",
-    "gulp-plumber": "^1.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.0",
-    "gulp-sort": "^2.0.0",
-    "gulp-source-url": "^0.1.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-stylelint": "^7.0.0",
-    "gulp-uglify": "^1.5.1",
-    "gulp-uncss": "^1.0.4",
-    "gulp-util": "^3.0.7",
-    "gulp-watch": "^4.3.9",
-    "gulp-zip": "^3.0.2",
-    "jshint": "^2.8.0",
-    "merge-stream": "^1.0.0",
-    "motion-ui": "^1.1.0",
-    "run-sequence": "^1.1.5",
-    "stylelint": "^9.2.1",
-    "stylelint-config-standard": "^18.2.0",
-    "vinyl-paths": "^2.1.0",
-    "yargs": "^3.31.0"
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "cross-env": "^6.0.3",
+    "laravel-mix": "^5.0.0"
+  }
 }
