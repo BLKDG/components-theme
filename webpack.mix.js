@@ -11,6 +11,8 @@ let mix = require('laravel-mix');
  |
  */
 
+//NEEDS: compile multiple files into one js and css file
+
 mix.js('components/header/header.js', 'assets/js/all.js')
     .version();
 //    .sass('resources/sass/app.scss', 'public/css'); 
