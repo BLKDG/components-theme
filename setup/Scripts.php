@@ -14,7 +14,7 @@ class Scripts
 
     public static function enqueue()
     {
-        wp_enqueue_style( 'styles', get_stylesheet_directory_uri() . '/assets/css/styles.css?v='.CACHE_BUST );
+        wp_enqueue_style( 'styles', get_stylesheet_directory_uri() . '/assets/css/styles.css?v='.filemtime(get_stylesheet_directory() . '/assets/css/styles.css'));
 
         // Enqueue Javascript Files
         // jQuery
@@ -26,14 +26,14 @@ class Scripts
         // Bootstrap
         wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/vendor/boostrap/dist/js/bootstrap.min.js', array('jquery'), '4.0.0', true );
 
-        // Google Maps
-        // wp_enqueue_script( 'googlemaps', 'https://maps.googleapis.com/maps/api/js?key='.GOOGLE_API_KEY, array('jquery'), '2.8.2', true );
+        // Mapbox
+        // wp_enqueue_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.js', array('jquery'), '0.44.0', false );
 
         // Slick Carousel
         // wp_enqueue_script( 'slick', get_stylesheet_directory_uri() . '/assets/vendor/slick-carousel/slick/slick.min.js', array('jquery'), '1.8.1', true );
 
         // Scripts
-        wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js?v='.CACHE_BUST, array('jquery', 'bootstrap'), '0.0.1', true );
+        wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js?v='.filemtime(get_stylesheet_directory() . '/assets/js/scripts.min.js'), array('jquery', 'bootstrap'), '0.0.1', true );
 
 
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

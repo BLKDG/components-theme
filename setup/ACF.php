@@ -11,6 +11,7 @@ class ACF
     {
         add_action( 'init', array(__CLASS__, 'create_theme_settings_options') );
         add_action( 'init', array(__CLASS__, 'add_google_api_key') );
+        add_action( 'init', array(__CLASS__, 'my_acf_show_admin') );
     }
 
     /**
@@ -38,6 +39,20 @@ class ACF
     {
         add_filter('acf/settings/google_api_key', function () {
             return GOOGLE_API_KEY;
+        });
+    }
+
+
+    /**
+     * Hide ACF menu from everyone except for the first account created (Usually admin)
+     */
+    public static function  my_acf_show_admin( $show ) 
+    {
+        add_filter('acf/settings/show_admin', function ( $show ) {
+            $user = wp_get_current_user();
+            if ($user->ID == 1) {
+              return current_user_can('manage_options');
+            }
         });
     }
 
