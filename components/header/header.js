@@ -1,4 +1,4 @@
-;(function ($) {
+export function header($) {
 
   $(document).ready(function(){
 
@@ -36,4 +36,4 @@
       }
   });
 
-})(jQuery);
+};

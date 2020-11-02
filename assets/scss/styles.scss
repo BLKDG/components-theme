@@ -4,47 +4,15 @@
 *  
 ******/
 
+// Change some variables
+@import "common/variables";
+
 /*
-* Variables
+* Boostrap
 */
-@import 'common/variables';
+@import "node_modules/bootstrap/scss/bootstrap";
 
-@import '../vendor/boostrap/scss/functions';
-@import '../vendor/boostrap/scss/variables';
-@import '../vendor/boostrap/scss/mixins';
-@import '../vendor/boostrap/scss/root';
-@import '../vendor/boostrap/scss/reboot';
-@import '../vendor/boostrap/scss/type';
-@import '../vendor/boostrap/scss/images';
-@import '../vendor/boostrap/scss/code';
-@import '../vendor/boostrap/scss/grid';
-@import '../vendor/boostrap/scss/tables';
-@import '../vendor/boostrap/scss/forms';
-@import '../vendor/boostrap/scss/buttons';
-@import '../vendor/boostrap/scss/transitions';
-@import '../vendor/boostrap/scss/dropdown';
-@import '../vendor/boostrap/scss/button-group';
-@import '../vendor/boostrap/scss/input-group';
-@import '../vendor/boostrap/scss/custom-forms';
 
-// @import '../vendor/boostrap/scss/nav';
-// @import '../vendor/boostrap/scss/navbar';
-// @import '../vendor/boostrap/scss/card';
-// @import '../vendor/boostrap/scss/breadcrumb';
-// @import '../vendor/boostrap/scss/pagination';
-// @import '../vendor/boostrap/scss/badge';
-// @import '../vendor/boostrap/scss/jumbotron';
-// @import '../vendor/boostrap/scss/alert';
-// @import '../vendor/boostrap/scss/progress';
-// @import '../vendor/boostrap/scss/media';
-// @import '../vendor/boostrap/scss/list-group';
-// @import '../vendor/boostrap/scss/close';
-// @import '../vendor/boostrap/scss/modal';
-// @import '../vendor/boostrap/scss/tooltip';
-// @import '../vendor/boostrap/scss/popover';
-// @import '../vendor/boostrap/scss/carousel';
-// @import '../vendor/boostrap/scss/utilities';
-// @import '../vendor/boostrap/scss/print';
 
 /**
  * Wordpress Core
@@ -54,15 +22,12 @@
 /**
  * Slick Slider
  */
-@import '../vendor/slick-carousel/slick/slick.scss';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css';
 
 /**
  * Typography
  */
-@import '../vendor/font-awesome/web-fonts-with-css/scss/fontawesome.scss';
-@import '../vendor/font-awesome/web-fonts-with-css/scss/fa-solid.scss';
-@import '../vendor/font-awesome/web-fonts-with-css/scss/fa-regular.scss';
-@import '../vendor/font-awesome/web-fonts-with-css/scss/fa-brands.scss';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'common/typography';
 
 /**
@@ -79,16 +44,3 @@
 * Partials
 ***/
 @import 'partials/buttons';
-
-
-/**
- * Components
- */
-// Component styles are injected through gulp
-/* inject:scss */
-@import '../../components/event/event';
-@import '../../components/footer/footer';
-@import '../../components/header/header';
-@import '../../components/post/post';
-@import '../../components/woocommerce/woocommerce-standard-styles';
-/* endinject */

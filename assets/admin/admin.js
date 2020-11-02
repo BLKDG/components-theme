@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(function($) {
 
     tinymce.create('tinymce.plugins.components_theme_plugin', {
         init : function(ed, url) {
