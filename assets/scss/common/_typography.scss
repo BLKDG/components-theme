@@ -1,0 +1,80 @@
+//(1) import font url
+
+//(2) create font variables
+$font: sans-serif;
+
+//(3) add to elements
+
+
+h1{
+    font-family: $font;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 1.1;
+    @include md{
+        font-size: 68px;
+    }
+}
+h2{
+    font-family: $font;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1;
+    @include md{
+        line-height: 1.16;
+    }
+}
+h3{
+    font-family: $font;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.7;
+    @include md{
+        font-size: 45px;
+    }
+}
+h4{ 
+    font-family: $font;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.8;
+    @include md{
+        font-size: 40px;
+    }
+}
+h5{
+    font-family: $font;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.14;
+    @include md{
+        font-size: 36px;
+    }
+}
+h6{ 
+    font-family: $font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    @include md{
+        font-size: 18px;
+    }
+}
+p{
+    font-family: $font;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    @include md{
+        font-size: 16px;
+    }
+}
+*{
+    font-family: $font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    @include md{
+        font-size: 16px;
+    }
+}

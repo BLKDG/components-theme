@@ -8,6 +8,7 @@
 * Variables
 */
 @import 'common/variables';
+@import 'common/mixins';
 
 @import '../vendor/boostrap/scss/functions';
 @import '../vendor/boostrap/scss/variables';
@@ -43,7 +44,7 @@
 // @import '../vendor/boostrap/scss/tooltip';
 // @import '../vendor/boostrap/scss/popover';
 // @import '../vendor/boostrap/scss/carousel';
-// @import '../vendor/boostrap/scss/utilities';
+@import '../vendor/boostrap/scss/utilities';
 // @import '../vendor/boostrap/scss/print';
 
 /**
@@ -71,6 +72,11 @@
 @import 'common/global';
 
 /**
+ * Animations
+ */
+ @import 'common/animations';
+
+/**
  * Functions
  */
 @import 'common/functions';
@@ -79,6 +85,8 @@
 * Partials
 ***/
 @import 'partials/buttons';
+@import 'partials/forms';
+@import 'partials/slick';
 
 
 /**

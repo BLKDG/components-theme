@@ -1,8 +1,8 @@
 ;(function ($) {
 
-  $(document).ready(function(){
+  $(document).on('ready',function(){
 
-      $('#mobile-menu').click(function(){
+      $('#mobile-menu').on('click',function(){
           $(this).toggleClass('open');
 
           $('.mobile-menu').fadeToggle();
@@ -26,7 +26,7 @@
   /**
    * Optional Pinned Header
    */
-  $(window).scroll(function (event) {
+  $(window).on('scroll',function (event) {
       var scroll = $(window).scrollTop();
 
       if(scroll > 84){

@@ -1,16 +1,42 @@
 // Colors
 $deep-blue: 		#0B0042;
 $gray: 				#eeeeee;
+$white:             #FFFFFF;
 
 $brand-primary:        teal;
 
 // breakpoints
-$sm-width: 480px;
+$sm-width: 576px;
 $md-width: 768px;
-$lg-width: 1025px;
+$lg-width: 992px;
+$xl-width: 1200px;
+
+
+//spacing multipliers
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 4.5),
+  7: ($spacer * 6),
+  8: ($spacer * 8),
+  9: ($spacer * 10),
+  10: ($spacer * 12)
+), $spacers);
 
 $fa-font-path: '../vendor/font-awesome/web-fonts-with-css/webfonts';
 
+//add variables to bootstrap:
 $theme-colors: (
-    "primary": $brand-primary
+    "primary": $brand-primary,
+    "gray": $gray,
+    "white": $white
 );
+//USAGE:
+//color class: text-primary
+//background class: bg-primary

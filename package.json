@@ -23,12 +23,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.1.0",
-    "bower": "~1.6.4",
-    "browser-sync": "^2.24.4",
+    "bower": "^1.8.4",
     "colors": "^1.1.2",
     "dateformat": "^1.0.12",
     "del": "^2.2.0",
-    "gulp": "^3.9.1",
+    "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-flatten": "^0.2.0",
@@ -53,14 +52,17 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.9",
     "gulp-zip": "^3.0.2",
-    "jshint": "^2.8.0",
+    "jshint": "^2.9.6",
     "merge-stream": "^1.0.0",
     "motion-ui": "^1.1.0",
     "run-sequence": "^1.1.5",
-    "stylelint": "^9.2.1",
+    "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0",
     "vinyl-paths": "^2.1.0",
     "yargs": "^3.31.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-babel": "^8.0.0",
+    "node-sass": "^4.11.0"
+  }
 }

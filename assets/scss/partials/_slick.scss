@@ -5,3 +5,66 @@
 		}
 	}
 }
+
+.slick-dots{
+	position: absolute;
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+	li{
+		position: relative;
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		margin: 0 4px 0 0;
+		padding: 0 10px;;
+		cursor: pointer;
+		&:before{
+			display: none;
+		}
+		&.slick-active{
+			button{
+				&:before{
+					top: 0;
+					left: -1px;
+					font-size: 28px;
+					color: $brand-primary;
+				}
+			}
+		}
+		&:only-child{
+			display: none;
+		}
+		button{
+			font-size: 0;
+		    line-height: 0;
+		    display: block;
+		    width: 18px;
+		    height: 20px;
+		    padding: 5px;
+		    cursor: pointer;
+		    color: transparent;
+		    border: 0;
+		    outline: none;
+			background: transparent;
+			transition: all 0.3s;
+		    &:before{
+		    	font-family: 'slick';
+		    	font-size: 28px;
+		    	line-height: 20px;
+		    	position: absolute;
+		    	top: 0;
+		    	left: 0;
+		    	width: 10px;
+		    	height: 10px;
+		    	content: '•';
+		    	text-align: center;
+		    	color: $gray;
+				-webkit-font-smoothing: antialiased;
+				transition: all 0.3s;
+		    }
+		}
+	}
+}

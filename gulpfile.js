@@ -8,7 +8,6 @@ var fs = require('fs');
 var merge = require('merge-stream');
 var path = require('path');
 var componentsPath = 'components/';
-var browserSync = require('browser-sync').create();
 var gulpStylelint = require('gulp-stylelint');
 
 function logFileChange(event) {
@@ -38,7 +37,6 @@ gulp.task('sass:inject', () => {
                 }
             }))
         .pipe(gulp.dest(`assets/scss`))
-        .pipe(browserSync.stream());
 });
 
 gulp.task('sass', sass);
@@ -57,7 +55,6 @@ function sass() {
         .pipe($.minifyCss())
         .pipe( $.sourcemaps.write('.')) 
         .pipe(gulp.dest('assets/css'))
-        .pipe(browserSync.stream())
 }
 
 gulp.task('js:globals', ['clean:js'], jsGlobals);
@@ -69,7 +66,6 @@ function jsGlobals() {
         .pipe($.rename({ suffix: '.min' }))
         .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest('assets/js'))
-        .pipe(browserSync.stream())
 }
 
 gulp.task('js:components', ['clean:components'], jsComponents);
@@ -83,7 +79,6 @@ function jsComponents() {
             .pipe($.uglify())
             .pipe($.sourcemaps.write('.'))
             .pipe(gulp.dest(componentsPath + folder))
-            .pipe(browserSync.stream())
     });
 
     return compilePublicComponents;
@@ -99,15 +94,6 @@ gulp.task('clean:components', function () {
 })
 
 gulp.task('default', ['sass:inject','sass', 'js:components', 'js:globals'], function() {
-
-    browserSync.init({
-        files: ['{components,templates}/**/*.php', '*.php'],
-        proxy: 'blkdg-component.test',
-        snippetOptions: {
-          whitelist: ['/wp-admin/admin-ajax.php'],
-          blacklist: ['/wp-admin/**']
-        },
-      });
 
     $.watch(['assets/js/*.js', '!assets/js/*.min.js'], function (v) {
         logFileChange(v);
