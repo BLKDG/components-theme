@@ -1,5 +1,27 @@
 jQuery(document).ready(function($) {
 
+    $('#link-options').append(`<div style="margin-top:4px"> 
+    <label><span>Link Class</span>
+            <select style="width:70%" name="wpse-link-class" id="wpse_link_class">
+                <option value="">None</option>
+                <option value="btn btn-white">White Button</option>
+                <option value="btn btn-blue">Blue Button</option>
+        </select>
+        </label>
+    </div>`);
+    $('body .wp-core-ui .wp-link #link-selector #search-panel #search-results').css('top', '250px')
+    $('#wp-link .query-results').css('top', '250px')
+    if (typeof wpLink !== 'undefined') {
+        wpLink.getAttrs = function() {
+            wpLink.correctURL();        
+            return {
+                class:      $( '#wpse_link_class' ).val(),
+                href:       $.trim( $( '#wp-link-url' ).val() ),
+                target:     $( '#wp-link-target' ).prop( 'checked' ) ? '_blank' : ''
+            };
+        }
+    }
+
     tinymce.create('tinymce.plugins.components_theme_plugin', {
         init : function(ed, url) {
                 // Register command for when button is clicked

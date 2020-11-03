@@ -12,6 +12,9 @@ class ACF
         add_action( 'init', array(__CLASS__, 'create_theme_settings_options') );
         add_action( 'init', array(__CLASS__, 'add_google_api_key') );
         add_action( 'init', array(__CLASS__, 'my_acf_show_admin') );
+        //init ACF blocks
+        add_action('acf/init', array(__CLASS__, 'acf_gallery_block') );
+        add_action('acf/init', array(__CLASS__, 'acf_banner_block') );
     }
 
     /**
@@ -54,6 +57,43 @@ class ACF
               return current_user_can('manage_options');
             }
         });
+    }
+
+    /**
+     * Custom ACF Gutenberg blocks
+     */
+    // https://torquemag.io/2020/01/create-gutenberg-block-with-acf/
+    public static function acf_gallery_block() {
+        // check function exists
+        if( function_exists('acf_register_block') ) {
+            
+            // register a block
+            acf_register_block(array(
+                'name'				=> 'gallery-slider',
+                'title'				=> __('Gallery Slider'),
+                'description'		=> __('A custom block for a sliding image gallery'),
+                'render_template'	=> 'blocks/gallery-slider/block-gallery-slider.php',
+                'category'			=> 'media', //include: common, formatting, layout, media, widgets, embeds
+                'icon'				=> 'images-alt2', //dashicons (without dashicons-)
+                'keywords'			=> array( 'gallery' ),
+            ));
+        }
+    }
+    public static function acf_banner_block() {
+        // check function exists
+        if( function_exists('acf_register_block') ) {
+            
+            // register a block
+            acf_register_block(array(
+                'name'				=> 'banner',
+                'title'				=> __('Banner'),
+                'description'		=> __('Full content-width banner with optional image'),
+                'render_template'	=> 'blocks/banner/block-banner.php',
+                'category'			=> 'media', //include: common, formatting, layout, media, widgets, embeds
+                'icon'				=> 'awards', //dashicons (without dashicons-)
+                'keywords'			=> array( 'banner', 'cta' ),
+            ));
+        }
     }
 
 }

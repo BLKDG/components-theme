@@ -8,6 +8,9 @@ footer{
 		li{
 			display: inline;
 			padding: 0 10px;
+			&:before{
+				display: none;
+			}
 		}
 	}
 }

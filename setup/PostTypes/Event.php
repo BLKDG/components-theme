@@ -37,6 +37,7 @@ class Event
                 'has_archive' => 'events',
                 'capability_type' => 'post',
                 'hierarchical' => false,
+                'show_in_rest' => true, //add gutenberg
                 'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions')
             )
         );

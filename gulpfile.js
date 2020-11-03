@@ -22,6 +22,25 @@ function getFolders(dir) {
     });
 }
 
+//compile blocks sass
+// gulp.task('sass:inject', () => {
+//     return gulp.src('assets/scss/styles.scss')
+//         .pipe($.inject(
+//             gulp.src('blocks/**/*.scss', {read: false})
+//                 .pipe($.sort()),
+//             {
+//                 transform: (filepath) => {
+//                     let newPath = filepath
+//                         .replace(`/blocks/`, '../../blocks/')
+//                         .replace(/_(.*).scss/, (match, p1, offset, string) => p1)
+//                         .replace('.scss', '');
+//                     return `@import '${newPath}';`;
+//                 }
+//             }))   
+//         .pipe(gulp.dest(`assets/scss`))
+// });
+
+//compile components sass
 gulp.task('sass:inject', () => {
     return gulp.src('assets/scss/styles.scss')
         .pipe($.inject(
@@ -108,6 +127,11 @@ gulp.task('default', ['sass:inject','sass', 'js:components', 'js:globals'], func
     $.watch(['components/**/*.scss', 'assets/scss/**/*.scss', '!assets/scss/styles.scss'], function (v) {
         logFileChange(v);
         gulp.run('sass:inject');
+    });
+
+    $.watch(['blocks/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
+        logFileChange(v);
+        gulp.run('sass');
     });
 
     $.watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
