@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.1.0",
-    "bower": "^1.8.4",
+    "bower": "^1.8.8",
     "colors": "^1.1.2",
     "dateformat": "^1.0.12",
     "del": "^2.2.0",
