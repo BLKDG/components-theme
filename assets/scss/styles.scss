@@ -90,9 +90,14 @@
 
 
 /**
- * Components
+ * Blocks & Components
  */
-// Component styles are injected through gulp
+// Block/Component styles are injected through gulp
 /* inject:scss */
 @import '../../blocks/banner/block-banner';
+@import '../../components/event/event';
+@import '../../components/footer/footer';
+@import '../../components/header/header';
+@import '../../components/post/post';
+@import '../../components/woocommerce/woocommerce-standard-styles';
 /* endinject */

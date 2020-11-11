@@ -23,7 +23,7 @@ function getFolders(dir) {
 }
 
 //compile blocks sass
-// gulp.task('sass:inject', () => {
+// gulp.task('block:inject', () => {
 //     return gulp.src('assets/scss/styles.scss')
 //         .pipe($.inject(
 //             gulp.src('blocks/**/*.scss', {read: false})
@@ -44,11 +44,12 @@ function getFolders(dir) {
 gulp.task('sass:inject', () => {
     return gulp.src('assets/scss/styles.scss')
         .pipe($.inject(
-            gulp.src('components/**/*.scss', {read: false})
+            gulp.src(['blocks/**/*.scss', 'components/**/*.scss'], {read: false})
                 .pipe($.sort()),
             {
                 transform: (filepath) => {
                     let newPath = filepath
+                        .replace(`/blocks/`, '../../blocks/')
                         .replace(`/components/`, '../../components/')
                         .replace(/_(.*).scss/, (match, p1, offset, string) => p1)
                         .replace('.scss', '');
@@ -103,7 +104,6 @@ function jsComponents() {
     return compilePublicComponents;
 }
 
-
 gulp.task('clean:js', function () {
     return del(['assets/js/*.min.js','assets/js/**/*.min.js']);
 })
@@ -124,17 +124,12 @@ gulp.task('default', ['sass:inject','sass', 'js:components', 'js:globals'], func
         gulp.run('js:components');
     });
 
-    $.watch(['components/**/*.scss', 'assets/scss/**/*.scss', '!assets/scss/styles.scss'], function (v) {
+    $.watch(['blocks/**/*.scss', 'components/**/*.scss', 'assets/scss/**/*.scss', '!assets/scss/styles.scss'], function (v) {
         logFileChange(v);
         gulp.run('sass:inject');
     });
 
-    $.watch(['blocks/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
-        logFileChange(v);
-        gulp.run('sass');
-    });
-
-    $.watch(['components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
+    $.watch(['blocks/**/*.scss', 'components/**/*.scss', 'assets/scss/**/*.scss'], function (v) {
         logFileChange(v);
         gulp.run('sass');
     });
