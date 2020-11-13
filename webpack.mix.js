@@ -1,10 +1,34 @@
 let mix = require('laravel-mix');
+let glob = require('glob');
+//const { then } = require('laravel-mix');
 
-mix.js(['assets/js/scripts.js'], 'public/scripts.js')
-	.babel('assets/js/scripts.js', 'public/scripts-es5.js');
+let sassFiles = [];
+let options = [];
+
+getJSFiles()
+	.then(function(jsFiles){
+		mix.babel(jsFiles, 'public/scripts.js')
+			.sourceMaps(false, 'source-map');
+	});
 	
-mix.sass('assets/scss/styles.scss', 'public/')
-	.sourceMaps(true, 'source-map')
+// mix.sass('assets/scss/styles.scss', 'public/')
+// 	.sourceMaps(true, 'source-map')
+
+
+async function getJSFiles(){
+	let jsFiles = [];
+
+	await glob.sync("assets/js/*.js").map(file => {
+		jsFiles.push(file);
+	});
+	await glob.sync("components/**/*.js").map(file => {
+		jsFiles.push(file);
+	})
+	await glob.sync("blocks/**/*.js").map(file => {
+		jsFiles.push(file);
+	});
+	return jsFiles;
+}
 
 // mix.then(function () {
 // 	console.log('gzipping files....');

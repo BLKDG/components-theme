@@ -6,7 +6,7 @@
 get_header();
 
 	while ( have_posts() ) : the_post(); ?>
-
+	
 		<?php
 		/**
 		 * This is an example of how to use the component system

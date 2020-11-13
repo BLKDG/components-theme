@@ -1,4 +1,3 @@
-export function header($) {
 
   $(document).ready(function(){
 
@@ -35,5 +34,3 @@ export function header($) {
           $('header').removeClass('scroll');
       }
   });
-
-};

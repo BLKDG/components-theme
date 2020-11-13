@@ -5,7 +5,7 @@ $(window).load(function(){
     
 });
 
-$(window).scroll(function() {
+$(window).on('scroll', function() {
 
     $('.anim-no-load').each(function(i, el) {
         var el = $(el);
@@ -16,10 +16,7 @@ $(window).scroll(function() {
 
 });
 
-
-$(window).resize(function(){
-
-
+$(window).on('resize', function(){
 });
 
 $.fn.visible = function(partial) {

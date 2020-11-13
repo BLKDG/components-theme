@@ -33,8 +33,7 @@ class Scripts
         wp_enqueue_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.8.1', true );
 
         // Scripts
-        wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/public/scripts-es5.min.js', array(), '0.0.1', true );
-
+        wp_enqueue_script( 'scripts', get_stylesheet_directory_uri() . '/public/scripts.js', array(), '0.0.1', true );
 
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
             wp_enqueue_script( 'comment-reply' );
