@@ -5,14 +5,16 @@ let glob = require('glob');
 let sassFiles = [];
 let options = [];
 
+mix.setResourceRoot('/wp-content/themes/components-theme/');
+
 getJSFiles()
 	.then(function(jsFiles){
 		mix.babel(jsFiles, 'public/scripts.js')
 			.sourceMaps(false, 'source-map');
 	});
 	
-// mix.sass('assets/scss/styles.scss', 'public/')
-// 	.sourceMaps(true, 'source-map')
+mix.sass('assets/scss/styles.scss', 'public/')
+	.sourceMaps(true, 'source-map')
 
 
 async function getJSFiles(){
