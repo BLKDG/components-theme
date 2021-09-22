@@ -1,3 +1,6 @@
 {
-    "/public/scripts.js": "/public/scripts.js"
+    "/mix.js.map": "/mix.js.map",
+    "/public/scripts.js": "/public/scripts.js",
+    "/public/styles.css": "/public/styles.css",
+    "/public/styles.css.map": "/public/styles.css.map"
 }

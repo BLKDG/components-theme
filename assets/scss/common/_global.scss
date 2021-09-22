@@ -24,7 +24,7 @@ ul{
 		line-height: 20px;
 		list-style: none;
 		font-size: 15px;
-		@include md{
+		@media (min-width: $md-width) {
 			font-size: 16px;
 			line-height: 26px;
 		}
@@ -51,7 +51,7 @@ ol{
 		padding-bottom: 5px;
 		line-height: 20px;
 		font-size: 15px;
-		@include md{
+		@media (min-width: $md-width) {
 			font-size: 16px;
 			line-height: 26px;
 		}

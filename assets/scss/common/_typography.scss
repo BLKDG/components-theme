@@ -11,7 +11,7 @@ h1{
     font-weight: 700;
     font-size: 38px;
     line-height: 1.1;
-    @include md{
+    @media (min-width: $md-width) {
         font-size: 68px;
     }
 }
@@ -20,7 +20,7 @@ h2{
     font-weight: 700;
     font-size: 36px;
     line-height: 1;
-    @include md{
+    @media (min-width: $md-width) {
         line-height: 1.16;
     }
 }
@@ -29,7 +29,7 @@ h3{
     font-weight: 400;
     font-size: 28px;
     line-height: 1.7;
-    @include md{
+    @media (min-width: $md-width) {
         font-size: 45px;
     }
 }
@@ -38,7 +38,7 @@ h4{
     font-weight: 700;
     font-size: 30px;
     line-height: 1.8;
-    @include md{
+    @media (min-width: $md-width) {
         font-size: 40px;
     }
 }
@@ -47,7 +47,7 @@ h5{
     font-weight: 700;
     font-size: 28px;
     line-height: 1.14;
-    @include md{
+    @media (min-width: $md-width) {
         font-size: 36px;
     }
 }
@@ -56,7 +56,7 @@ h6{
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
-    @include md{
+    @media (min-width: $md-width) {
         font-size: 18px;
     }
 }
@@ -65,7 +65,7 @@ p{
     font-weight: 400;
     font-size: 15px;
     line-height: 1.5;
-    @include md{
+    @media (min-width: $md-width) {
         font-size: 16px;
     }
 }
@@ -74,7 +74,7 @@ p{
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
-    @include md{
+    @media (min-width: $md-width) {
         font-size: 16px;
     }
 }
