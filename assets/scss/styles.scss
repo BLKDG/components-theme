@@ -10,35 +10,9 @@
 /*
 * Boostrap
 */
-<<<<<<< HEAD
-@import 'common/variables';
-@import 'common/mixins';
-=======
 @import "node_modules/bootstrap/scss/bootstrap";
->>>>>>> e83737a0d973cf1afae464fc87d451065b784d36
 
 
-<<<<<<< HEAD
-// @import '../vendor/boostrap/scss/nav';
-// @import '../vendor/boostrap/scss/navbar';
-// @import '../vendor/boostrap/scss/card';
-// @import '../vendor/boostrap/scss/breadcrumb';
-// @import '../vendor/boostrap/scss/pagination';
-// @import '../vendor/boostrap/scss/badge';
-// @import '../vendor/boostrap/scss/jumbotron';
-// @import '../vendor/boostrap/scss/alert';
-// @import '../vendor/boostrap/scss/progress';
-// @import '../vendor/boostrap/scss/media';
-// @import '../vendor/boostrap/scss/list-group';
-// @import '../vendor/boostrap/scss/close';
-// @import '../vendor/boostrap/scss/modal';
-// @import '../vendor/boostrap/scss/tooltip';
-// @import '../vendor/boostrap/scss/popover';
-// @import '../vendor/boostrap/scss/carousel';
-@import '../vendor/boostrap/scss/utilities';
-// @import '../vendor/boostrap/scss/print';
-=======
->>>>>>> e83737a0d973cf1afae464fc87d451065b784d36
 
 /**
  * Wordpress Core
@@ -74,24 +48,4 @@
 /***
 * Partials
 ***/
-<<<<<<< HEAD
 @import 'partials/buttons';
-@import 'partials/forms';
-@import 'partials/slick';
-
-
-/**
- * Blocks & Components
- */
-// Block/Component styles are injected through gulp
-/* inject:scss */
-@import '../../blocks/banner/block-banner';
-@import '../../components/event/event';
-@import '../../components/footer/footer';
-@import '../../components/header/header';
-@import '../../components/post/post';
-@import '../../components/woocommerce/woocommerce-standard-styles';
-/* endinject */
-=======
-@import 'partials/buttons';
->>>>>>> e83737a0d973cf1afae464fc87d451065b784d36
