@@ -1,4 +1,3 @@
-;(function ($) {
 
   $(document).on('ready',function(){
 
@@ -35,5 +34,3 @@
           $('header').removeClass('scroll');
       }
   });
-
-})(jQuery);

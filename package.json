@@ -1,26 +1,35 @@
 {
-  "name": "components",
-  "title": "Components Theme",
+  "name": "components-theme",
   "version": "1.0.0",
-  "description": "Components Based Theme by BLKDG",
-  "keywords": [
-    "Components Theme",
-    "WordPress",
-    "starter theme",
-    "component based",
-    "semantic",
-    "mobile first",
-    "customizable",
-    "responsive"
-  ],
-  "homepage": "",
-  "bugs": "",
-  "license": "MIT",
-  "main": "gulpfile.js",
+  "description": "By [BLKDG](https://www.blkdg.com)",
+  "main": "webpack.mix.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "bootstrap": "^4.5.3",
+    "cross-env": "^7.0.2",
+    "glob": "^7.1.6",
+    "laravel-mix": "^5.0.7",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.28.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/BLKDG/components-theme.git"
   },
+<<<<<<< HEAD
   "devDependencies": {
     "autoprefixer": "^6.1.0",
     "bower": "^1.8.4",
@@ -65,4 +74,12 @@
     "gulp-babel": "^8.0.0",
     "node-sass": "^4.11.0"
   }
+=======
+  "author": "BLKDG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BLKDG/components-theme/issues"
+  },
+  "homepage": "https://github.com/BLKDG/components-theme#readme"
+>>>>>>> e83737a0d973cf1afae464fc87d451065b784d36
 }

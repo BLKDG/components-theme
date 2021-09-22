@@ -4,30 +4,21 @@
 *  
 ******/
 
+// Change some variables
+@import "common/variables";
+
 /*
-* Variables
+* Boostrap
 */
+<<<<<<< HEAD
 @import 'common/variables';
 @import 'common/mixins';
+=======
+@import "node_modules/bootstrap/scss/bootstrap";
+>>>>>>> e83737a0d973cf1afae464fc87d451065b784d36
 
-@import '../vendor/boostrap/scss/functions';
-@import '../vendor/boostrap/scss/variables';
-@import '../vendor/boostrap/scss/mixins';
-@import '../vendor/boostrap/scss/root';
-@import '../vendor/boostrap/scss/reboot';
-@import '../vendor/boostrap/scss/type';
-@import '../vendor/boostrap/scss/images';
-@import '../vendor/boostrap/scss/code';
-@import '../vendor/boostrap/scss/grid';
-@import '../vendor/boostrap/scss/tables';
-@import '../vendor/boostrap/scss/forms';
-@import '../vendor/boostrap/scss/buttons';
-@import '../vendor/boostrap/scss/transitions';
-@import '../vendor/boostrap/scss/dropdown';
-@import '../vendor/boostrap/scss/button-group';
-@import '../vendor/boostrap/scss/input-group';
-@import '../vendor/boostrap/scss/custom-forms';
 
+<<<<<<< HEAD
 // @import '../vendor/boostrap/scss/nav';
 // @import '../vendor/boostrap/scss/navbar';
 // @import '../vendor/boostrap/scss/card';
@@ -46,6 +37,8 @@
 // @import '../vendor/boostrap/scss/carousel';
 @import '../vendor/boostrap/scss/utilities';
 // @import '../vendor/boostrap/scss/print';
+=======
+>>>>>>> e83737a0d973cf1afae464fc87d451065b784d36
 
 /**
  * Wordpress Core
@@ -55,15 +48,12 @@
 /**
  * Slick Slider
  */
-@import '../vendor/slick-carousel/slick/slick.scss';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css';
 
 /**
  * Typography
  */
-@import '../vendor/font-awesome/web-fonts-with-css/scss/fontawesome.scss';
-@import '../vendor/font-awesome/web-fonts-with-css/scss/fa-solid.scss';
-@import '../vendor/font-awesome/web-fonts-with-css/scss/fa-regular.scss';
-@import '../vendor/font-awesome/web-fonts-with-css/scss/fa-brands.scss';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'common/typography';
 
 /**
@@ -84,6 +74,7 @@
 /***
 * Partials
 ***/
+<<<<<<< HEAD
 @import 'partials/buttons';
 @import 'partials/forms';
 @import 'partials/slick';
@@ -101,3 +92,6 @@
 @import '../../components/post/post';
 @import '../../components/woocommerce/woocommerce-standard-styles';
 /* endinject */
+=======
+@import 'partials/buttons';
+>>>>>>> e83737a0d973cf1afae464fc87d451065b784d36

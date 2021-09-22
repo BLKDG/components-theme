@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(function($) {
 
     $('#link-options').append(`<div style="margin-top:4px"> 
     <label><span>Link Class</span>
