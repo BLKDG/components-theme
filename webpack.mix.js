@@ -7,48 +7,33 @@ let options = [];
 
 mix.setResourceRoot('/wp-content/themes/components-theme/');
 
-getJSFiles()
-	.then(function(jsFiles){
-		mix.babel(jsFiles, 'public/scripts.js')
-			.sourceMaps(false, 'source-map');
-	});
-	
 mix.sass('assets/scss/styles.scss', 'public/')
 	.sourceMaps(true, 'source-map')
 
+// Components
+glob.sync('components/**/*.scss').map(file => {
+	mix.sass(file, 'public/components/css')
+	// .sourceMaps(true, 'source-map')
+});
 
-async function getJSFiles(){
+glob.sync("components/**/*.js").map(file => {
+	var fileName = file.split('\\').pop().split('/').pop();
+	mix.babel(file, 'public/components/js/' + fileName)
+		.sourceMaps(false, 'source-map');
+})
+
+getJSFiles()
+	.then(function (jsFiles) {
+		mix.babel(jsFiles, 'public/scripts.js')
+			.sourceMaps(false, 'source-map');
+	});
+
+async function getJSFiles() {
 	let jsFiles = [];
 
 	await glob.sync("assets/js/*.js").map(file => {
 		jsFiles.push(file);
 	});
-	await glob.sync("components/**/*.js").map(file => {
-		jsFiles.push(file);
-	})
-	await glob.sync("blocks/**/*.js").map(file => {
-		jsFiles.push(file);
-	});
+
 	return jsFiles;
 }
-
-// mix.then(function () {
-// 	console.log('gzipping files....');
-// 	const { exec } = require('child_process');
-// 	exec('gzip -9 -c public/scripts-es5.js > public/scripts-es5.js.gz', (err, stdout, stderr) => {
-// 		if (err) {
-// 			console.log('ERROR: failed to gzip scripts-es5.js')
-// 		}
-// 		else {
-// 			console.log('COMPRESSED: public/scripts-es5.js.gz');
-// 		}
-// 	});
-// 	exec('gzip -9 -c public/styles.css > public/styles.css.gz', (err, stdout, stderr) => {
-// 		if (err) {
-// 			console.log('ERROR: failed to gzip styles.css')
-// 		}
-// 		else {
-// 			console.log('COMPRESSED: public/styles.css.gz');
-// 		}
-// 	});
-// });

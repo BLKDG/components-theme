@@ -10,14 +10,17 @@ Run the following commands from your terminal.
 
 `npm install`
 
-`gulp`
+For Development
+`npm run watch`
 
+For production build run 
+`npm run production`
 
 ## The Toolkit
 
 We've found what works for us at [BLKDG](https://www.blkdg.com) and have continually added to the arsenal. The general thought is that the NPM packages are only used locally during the dev process and are in the gitignore file. The bower packages are plugins and other tools that we utilize everywhere, so those get shipped with the production code and are included in `assets/vendor`. Below is the list of bower packages. Not all packages are enqueued, but its nice to know they are there. You can see the list of enqueued javascript plugins in `includes/enqueue-scripts.php`.
 
-* Bootstrap Sass (We'll be updating to Bootstrap 4.0 when its ready for production)
+* Bootstrap Sass
 * Font Awesome
 * Fancybox - A flexible lightbox plugin
 * GSAP - An incredible animation library
@@ -84,12 +87,13 @@ This is helpful because we may want to reuse this component somewhere else in th
 
 ### 3. Components
 
-Now we'll look at the components themselves. Gulp is set up to automatically comb our components for sass files, so you can create as many sass files in the components folders as you like. We've include an `enqueue_scripts()` function in our `renderComponent()` function that calls the component js file on demand. So that file will only be called if the related components php file is being used on the page. Gulp will automatically minify and uglify the js files you create. Using our example above, the components folder structure may look something like this:
+Now we'll look at the components themselves. Gulp is set up to automatically comb our components for sass files, so you can create as many sass files in the components folders as you like. We've include an `enqueue_scripts()` function in our `render()` function that calls the component js file on demand. So that file will only be called if the related components php file is being used on the page. Gulp will automatically minify and uglify the js files you create. Using our example above, the components folder structure may look something like this:
 
 ```
 /components
 ├── /section
-	├── section-title.php
+	├── /views
+		├── section-title.php
 	├── _section.scss
 	├──section.js
 ```
@@ -113,11 +117,3 @@ if(isset($DATA->title)){ ?>
 <?php } ?>
 
 ```
-
-
-## Theme Enhancements & Updates
-
-We utilize the Trello board below to manage development tasks
-
-https://trello.com/b/mlqDk6Ff/components-theme
-

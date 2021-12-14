@@ -12,6 +12,21 @@ class Helpers
         //add_action( 'save_post', array(__CLASS__, 'saving_post_page') );
     }
 
+    public static function inline_css($filename){
+
+        ob_start();
+        $file = get_stylesheet_directory() . '/public/components/css/' . $filename . '.css';
+        error_log($file);
+        include $file;
+        $css_output = ob_get_clean();
+
+        // return the stored style
+        if ($css_output != "" ) {
+            echo '<style id="inline-css" type="text/css">'. $css_output . '</style>';
+        }
+
+    }
+
     public static function custom_excerpt($excerpt, $length){
         $full = $excerpt;
         $full_stripped = strip_tags($full);
@@ -24,10 +39,12 @@ class Helpers
         }
         return $short;
     }
+
     public static function strip_images($content){
         $strp_content = preg_replace("/<img[^>]+\>/i", "", $content); 
         return $strp_content;
     }
+
     public static function get_the_content_formatted() {
         $content = get_the_content();
         $content = apply_filters('the_content', $content);

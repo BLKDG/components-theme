@@ -1,3 +1,4 @@
+<?php Setup\Helpers::inline_css('header'); ?>
 <header>
 	<?php if ( has_nav_menu( 'utility' )) : ?>
 

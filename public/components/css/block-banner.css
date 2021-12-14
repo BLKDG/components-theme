@@ -1,0 +1,28 @@
+.block-banner {
+  position: relative;
+  height: 400px;
+}
+
+.block-banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.block-banner .content {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.block-banner .content .link a {
+  color: #fff !important;
+  transition: all 0.3s;
+}
+
+
+/*# sourceMappingURL=block-banner.css.map*/

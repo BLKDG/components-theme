@@ -1,6 +1,17 @@
 {
-    "/mix.js.map": "/mix.js.map",
-    "/public/scripts.js": "/public/scripts.js",
     "/public/styles.css": "/public/styles.css",
-    "/public/styles.css.map": "/public/styles.css.map"
+    "/public/components/css/block-banner.css": "/public/components/css/block-banner.css",
+    "/public/components/css/footer.css": "/public/components/css/footer.css",
+    "/public/components/css/header.css": "/public/components/css/header.css",
+    "/public/components/css/post.css": "/public/components/css/post.css",
+    "/mix.js.map": "/mix.js.map",
+    "/public/styles.css.map": "/public/styles.css.map",
+    "/public/components/css/block-banner.css.map": "/public/components/css/block-banner.css.map",
+    "/public/components/css/footer.css.map": "/public/components/css/footer.css.map",
+    "/public/components/css/header.css.map": "/public/components/css/header.css.map",
+    "/public/components/css/post.css.map": "/public/components/css/post.css.map",
+    "/public/components/js/footer.js": "/public/components/js/footer.js",
+    "/public/components/js/header.js": "/public/components/js/header.js",
+    "/public/components/js/post.js": "/public/components/js/post.js",
+    "/public/scripts.js": "/public/scripts.js"
 }

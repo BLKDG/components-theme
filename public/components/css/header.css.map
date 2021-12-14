@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./components/header/header.scss"],"names":[],"mappings":"AAAA;EACI;CACJ;;AAAI;EACI;CAGR","file":"public/components/css/header.css","sourcesContent":["header{\n    background:#eaeaea;\n    a{\n        color:#333;\n    }\n}"],"sourceRoot":""}
